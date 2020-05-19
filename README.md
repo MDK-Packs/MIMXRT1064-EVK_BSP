@@ -1,0 +1,2 @@
+# MIMXRT1064-EVK_BSP
+NXP MIMXRT1064-EVK board support CMSIS Software Pack
