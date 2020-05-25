@@ -1,0 +1,18 @@
+The 'Blinky' project is a simple CMSIS RTOS2 based example.
+Compliant to Cortex Microcontroller Software Interface Standard (CMSIS).
+
+Example functionality:
+
+ - Virtual LED is blinking with a period of 100 ms
+ - Virtual Button vioBUTTON0 is used for stop/start blinking Virtual LED vioLED0
+
+ - Target options:
+   - Compiler:                  ARM Compiler optimization Level 1
+   - Compiler:Event Recorder:   Enabled
+   - CMSIS:RTOS2:Keil RTX5:     Source
+
+ - Hardware Mapping:
+            Virtual I/O      Board
+   LED       vioLED0          USER_LED
+   Button    vioBUTTON0       USER_BUTTON
+
