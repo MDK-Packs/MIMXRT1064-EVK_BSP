@@ -15,4 +15,3 @@ Example functionality:
             Virtual I/O      Board
    LED       vioLED0          USER_LED
    Button    vioBUTTON0       USER_BUTTON
-

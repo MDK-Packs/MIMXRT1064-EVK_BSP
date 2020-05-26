@@ -4,7 +4,8 @@
   <vendor>Keil</vendor>
   <name>MIMXRT1064-EVK_BSP</name>
   <description>NXP MIMXRT1064-EVK board support pack</description>
-  <url>http://www.keil.com/pack/</url>
+  <url>https://github.com/MDK-Packs/Pack/raw/master/MIMXRT1064-EVK_BSP/</url>
+  <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
     <release version="1.0.0-dev0">
@@ -56,7 +57,9 @@
   </components>
 
   <boards>
-    <board vendor="NXP" name="EVK-MIMXRT1064" revision="Rev.A">
+    <board vendor="NXP" name="EVK-MIMXRT1064" revision="Rev.A"
+           salesContact="https://www.nxp.com/company/contact-us:CONTACTUS"
+           orderForm   ="https://www.nxp.com/part/MIMXRT1064-EVK#/">
       <description>MIMXRT1064-EVK: EVK Development Platform for i.MX MIMXRT1064 MCUs</description>
       <image small="Images/MIMXRT1064EVK_small.jpg"
              large="Images/MIMXRT1064EVK_large.jpg"/>
