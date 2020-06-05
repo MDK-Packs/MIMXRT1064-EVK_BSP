@@ -35,19 +35,18 @@ vioLED0           | vioSignalOut.0 | GPIO_AD_B0_09 (USER_LED)                   
 #include <stdarg.h>
 #include "cmsis_vio.h"
 
-#include "RTE_Components.h"             // Component selection
+#include "RTE_Components.h"
 #include CMSIS_device_header
 
 #if !defined CMSIS_VOUT || !defined CMSIS_VIN
-// Add user includes here:
-#include "fsl_common.h"                 // Keil::Board Support:SDK Project Template:Project_Template
-#include "fsl_iomuxc.h"                 // Keil::Board Support:SDK Project Template:Project_Template
-#include "fsl_gpio.h"                   // Keil::Board Support:SDK Project Template:Project_Template
-#include "peripherals.h"                // Keil::Board Support:SDK Project Template:Project_Template
-#include "pin_mux.h"                    // Keil::Board Support:SDK Project Template:Project_Template
-#include "board.h"                      // Keil::Board Support:SDK Project Template:Project_Template
+#include "fsl_common.h"
+#include "fsl_iomuxc.h"
+#include "fsl_gpio.h"
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "board.h"
 
-#include "cmsis_os2.h"                  // ::CMSIS:RTOS2
+#include "cmsis_os2.h"
 #endif
 
 // VIO input, output definitions
@@ -68,7 +67,6 @@ __USED vioAddrIPv4_t vioAddrIPv4[VIO_IPV4_ADDRESS_NUM];                 // Memor
 __USED vioAddrIPv6_t vioAddrIPv6[VIO_IPV6_ADDRESS_NUM];                 // Memory for IPv6 address value used in vioSetIPv6/vioGetIPv6
 
 #if !defined CMSIS_VOUT
-// Add global user types, variables, functions here:
 static char         ip_ascii[40];       // string buffer for IP address conversion
 
 /**
@@ -169,19 +167,19 @@ void vioInit (void) {
   vioSignalIn  = 0U;
   vioSignalOut = 0U;
 
-  memset (vioPrintMem, 0, sizeof(vioPrintMem));
-  memset (vioValue,    0, sizeof(vioValue));
-  memset (vioValueXYZ, 0, sizeof(vioValueXYZ));
-  memset (vioAddrIPv4, 0, sizeof(vioAddrIPv4));
-  memset (vioAddrIPv6, 0, sizeof(vioAddrIPv6));
+  memset(vioPrintMem, 0, sizeof(vioPrintMem));
+  memset(vioValue,    0, sizeof(vioValue));
+  memset(vioValueXYZ, 0, sizeof(vioValueXYZ));
+  memset(vioAddrIPv4, 0, sizeof(vioAddrIPv4));
+  memset(vioAddrIPv6, 0, sizeof(vioAddrIPv6));
 
 #if !defined CMSIS_VOUT
-// Add user code here:
+  // Initialize LEDs pins
   BOARD_InitLEDPins();
 #endif
 
 #if !defined CMSIS_VIN
-// Add user code here:
+  // Initialize buttons pins
   BOARD_InitButtonsPins();
 #endif
 }
@@ -228,7 +226,7 @@ void vioSetSignal (uint32_t mask, uint32_t signal) {
   vioSignalOut |=  mask & signal;
 
 #if !defined CMSIS_VOUT
-// Add user code here:
+  // Output signals to LEDs
 
   if (mask & vioLED1) {
     if (signal & vioLED1) {
@@ -249,7 +247,7 @@ uint32_t vioGetSignal (uint32_t mask) {
 #endif
 
 #if !defined CMSIS_VIN
-// Add user code here:
+  // Get input signals from buttons
   if (mask & vioBUTTON0) {
     if (!GPIO_PinRead (BOARD_INITBUTTONSPINS_USER_BUTTON_PORT, BOARD_INITBUTTONSPINS_USER_BUTTON_PIN)) {
       vioSignalIn |=  vioBUTTON0;
@@ -367,7 +365,7 @@ void vioSetIPv4 (uint32_t id, vioAddrIPv4_t addrIPv4) {
   vioAddrIPv4[index] = addrIPv4;
 
 #if !defined CMSIS_VOUT
-// Add user code here:
+  // Convert IP4 address to ASCII
   ip4_2a((uint8_t *)&vioAddrIPv4[index], ip_ascii, sizeof(ip_ascii));
 #endif
 }
@@ -411,7 +409,7 @@ void vioSetIPv6 (uint32_t id, vioAddrIPv6_t addrIPv6) {
   vioAddrIPv6[index] = addrIPv6;
 
 #if !defined CMSIS_VOUT
-// Add user code here:
+  // Convert IP6 address to ASCII
   ip6_2a((uint8_t *)&vioAddrIPv6[index], ip_ascii, sizeof(ip_ascii));
 #endif
 }

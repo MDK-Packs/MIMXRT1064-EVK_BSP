@@ -198,7 +198,7 @@
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
-            <NoZi2>0</NoZi2>
+            <NoZi2>1</NoZi2>
             <NoZi3>0</NoZi3>
             <NoZi4>0</NoZi4>
             <NoZi5>0</NoZi5>
@@ -286,12 +286,12 @@
               <OCR_RVCT6>
                 <Type>0</Type>
                 <StartAddress>0x20200000</StartAddress>
-                <Size>0xc0000</Size>
+                <Size>0xbf800</Size>
               </OCR_RVCT6>
               <OCR_RVCT7>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x202bf800</StartAddress>
+                <Size>0x800</Size>
               </OCR_RVCT7>
               <OCR_RVCT8>
                 <Type>0</Type>
@@ -381,17 +381,17 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Documentation</GroupName>
+          <GroupName>App</GroupName>
           <Files>
             <File>
-              <FileName>Abstract.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Abstract.txt</FilePath>
+              <FileName>Blinky.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Blinky.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Source Files</GroupName>
+          <GroupName>Board</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
@@ -399,9 +399,29 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>Blinky.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Blinky.c</FilePath>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>evkmimxrt1064_flexspi_nor.ini</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\evkmimxrt1064_flexspi_nor.ini</FilePath>
+            </File>
+            <File>
+              <FileName>MIMXRT1064-EVK.mex</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MIMXRT1064-EVK.mex</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Documentation</GroupName>
+          <Files>
+            <File>
+              <FileName>Abstract.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Abstract.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -731,7 +751,11 @@
       <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="Keil" Cversion="1.4.0" condition="Cortex-M Device" isTargetSpecific="1">
         <package name="ARM_Compiler" schemaVersion="1.6.3" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.3"/>
         <targetInfos>
-          <targetInfo name="MIMXRT1064-EVK"/>
+          <targetInfo name="MIMXRT1064-EVK">
+            <mem>
+              <RVCTZI>2</RVCTZI>
+            </mem>
+          </targetInfo>
         </targetInfos>
       </component>
       <component Capiversion="0.1.0" Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cvendor="Keil" Cversion="1.0.0" condition="MIMXRT1064-EVK VIO">

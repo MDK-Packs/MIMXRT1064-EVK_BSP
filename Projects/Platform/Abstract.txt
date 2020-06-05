@@ -3,7 +3,7 @@ Compliant to Cortex Microcontroller Software Interface Standard (CMSIS).
 
 Example functionality:
 
- - Platform template contains preconfigured drivers (USART, SPI, I2C)
+ - Platform template contains preconfigured drivers (USART, SPI)
 
  - Target options:
    - Compiler:                  ARM Compiler optimization Level 1

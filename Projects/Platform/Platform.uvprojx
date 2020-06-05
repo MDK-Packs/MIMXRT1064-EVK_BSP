@@ -381,22 +381,12 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source</GroupName>
+          <GroupName>App</GroupName>
           <Files>
             <File>
               <FileName>Platform.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Platform.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Documentation</GroupName>
-          <Files>
-            <File>
-              <FileName>Abstract.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Abstract.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -409,14 +399,29 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>clock_freq.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\clock_freq.c</FilePath>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
             </File>
             <File>
-              <FileName>clock_freq.h</FileName>
+              <FileName>evkmimxrt1064_flexspi_nor.ini</FileName>
               <FileType>5</FileType>
-              <FilePath>.\clock_freq.h</FilePath>
+              <FilePath>.\evkmimxrt1064_flexspi_nor.ini</FilePath>
+            </File>
+            <File>
+              <FileName>MIMXRT1064-EVK.mex</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MIMXRT1064-EVK.mex</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Documentation</GroupName>
+          <Files>
+            <File>
+              <FileName>Abstract.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Abstract.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -717,12 +722,6 @@
 
   <RTE>
     <apis>
-      <api Capiversion="2.4.0" Cclass="CMSIS Driver" Cgroup="I2C" exclusive="0">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.1-dev0"/>
-        <targetInfos>
-          <targetInfo name="MIMXRT1064-EVK"/>
-        </targetInfos>
-      </api>
       <api Capiversion="2.3.0" Cclass="CMSIS Driver" Cgroup="SPI" exclusive="0">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.1-dev0"/>
         <targetInfos>
@@ -772,18 +771,12 @@
         </targetInfos>
       </component>
       <component Capiversion="0.1.0" Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cvendor="Keil" Cversion="1.0.0" condition="MIMXRT1064-EVK VIO">
-        <package name="MIMXRT1064-EVK_BSP" schemaVersion="1.6.0" url="http://www.keil.com/pack/" vendor="Keil" version="0.0.1"/>
+        <package name="MIMXRT1064-EVK_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/MIMXRT1064-EVK_BSP/" vendor="Keil" version="1.0.0-dev0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
       </component>
       <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="MIMXRT1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND_component.lpuart_adapter_AND_component.serial_manager_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_utility.debug_console">
-        <package license="Licenses.txt" name="MIMXRT1064_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.0"/>
-        <targetInfos>
-          <targetInfo name="MIMXRT1064-EVK"/>
-        </targetInfos>
-      </component>
-      <component Cclass="CMSIS Driver" Cgroup="I2C" Csub="lpi2c_cmsis" Cvendor="NXP" Cversion="2.0.0" condition="device.MIMXRT1064_AND_CMSIS_Driver_Include.I2C_AND_RTE_Device_AND_driver.lpi2c_edma">
         <package license="Licenses.txt" name="MIMXRT1064_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
@@ -1126,16 +1119,16 @@
     <Layers>
       <Layer>
         <LayName>&lt;Project Info&gt;</LayName>
-        <LayDesc></LayDesc>
-        <LayUrl></LayUrl>
-        <LayKeys></LayKeys>
-        <LayCat></LayCat>
-        <LayLic></LayLic>
+        <LayDesc>Platform is a simple CMSIS RTOS2 example skeleton.</LayDesc>
+        <LayUrl>https://www.keil.com</LayUrl>
+        <LayKeys>Layer, CMSIS RTOS</LayKeys>
+        <LayCat>RTOS</LayCat>
+        <LayLic>Apache 2.0</LayLic>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
       <Layer>
-        <LayName>Application</LayName>
+        <LayName>App</LayName>
         <LayDesc>Platform Application Layer</LayDesc>
         <LayKeys>Layer</LayKeys>
         <LayCat>RTOS</LayCat>
@@ -1146,7 +1139,7 @@
       <Layer>
         <LayName>Board</LayName>
         <LayDesc>Board Layer for MIMXRT1064-EVK</LayDesc>
-        <LayKeys>Board, NUCLEO-L552E-Q, RTOS</LayKeys>
+        <LayKeys>Board, MIMXRT1064-EVK, RTOS</LayKeys>
         <LayCat>RTOS</LayCat>
         <LayLic>Apache 2.0</LayLic>
         <LayTarg>1</LayTarg>
@@ -1157,12 +1150,12 @@
       <LayAsnItem>
         <LayAsnType>3</LayAsnType>
         <LayAsnName>Source</LayAsnName>
-        <LayAsnLayerName>Application</LayAsnLayerName>
+        <LayAsnLayerName>App</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>3</LayAsnType>
         <LayAsnName>Documentation</LayAsnName>
-        <LayAsnLayerName>Application</LayAsnLayerName>
+        <LayAsnLayerName>App</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>3</LayAsnType>
@@ -1328,6 +1321,11 @@
         <LayAsnType>2</LayAsnType>
         <LayAsnName>.\clock_freq.h</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>3</LayAsnType>
+        <LayAsnName>App</LayAsnName>
+        <LayAsnLayerName>App</LayAsnLayerName>
       </LayAsnItem>
     </LayAssign>
   </LayerInfo>

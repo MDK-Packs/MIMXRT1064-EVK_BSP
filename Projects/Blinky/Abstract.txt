@@ -13,5 +13,5 @@ Example functionality:
 
  - Hardware Mapping:
             Virtual I/O      Board
-   LED       vioLED0          USER_LED
-   Button    vioBUTTON0       USER_BUTTON
+   LED      vioLED0          USER_LED
+   Button   vioBUTTON0       USER_BUTTON

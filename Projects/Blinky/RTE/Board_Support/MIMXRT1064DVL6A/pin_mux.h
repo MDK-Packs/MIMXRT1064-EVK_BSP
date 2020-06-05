@@ -608,101 +608,50 @@ void BOARD_InitLEDPins(void);
  */
 void BOARD_InitButtonsPins(void);
 
-/* GPIO_AD_B0_13 (coord L14), UART1_RXD */
-#define LPUART1_INITPINS_UART1_RXD_PERIPHERAL                            LPUART1   /*!< Device name: LPUART1 */
-#define LPUART1_INITPINS_UART1_RXD_SIGNAL                                     RX   /*!< LPUART1 signal: RX */
-
-/* GPIO_AD_B0_12 (coord K14), UART1_TXD */
-#define LPUART1_INITPINS_UART1_TXD_PERIPHERAL                            LPUART1   /*!< Device name: LPUART1 */
-#define LPUART1_INITPINS_UART1_TXD_SIGNAL                                     TX   /*!< LPUART1 signal: TX */
-
-
-/*!
- * @brief Configures pin routing and optionally pin electrical features.
- *
- */
-void LPUART1_InitPins(void);
-
-
-/*!
- * @brief Configures pin routing and optionally pin electrical features.
- *
- */
-void LPUART1_DeinitPins(void);
-
 /* GPIO_AD_B1_06 (coord J12), CSI_VSYNC/J35[18]/J22[2]/UART_TX */
-#define LPUART3_INITPINS_CSI_VSYNC_PERIPHERAL                            LPUART3   /*!< Device name: LPUART3 */
-#define LPUART3_INITPINS_CSI_VSYNC_SIGNAL                                     TX   /*!< LPUART3 signal: TX */
+#define BOARD_INITARDUINO_UARTPINS_CSI_VSYNC_PERIPHERAL                  LPUART3   /*!< Device name: LPUART3 */
+#define BOARD_INITARDUINO_UARTPINS_CSI_VSYNC_SIGNAL                           TX   /*!< LPUART3 signal: TX */
 
 /* GPIO_AD_B1_07 (coord K10), CSI_HSYNC/J35[16]/J22[1]/UART_RX */
-#define LPUART3_INITPINS_CSI_HSYNC_PERIPHERAL                            LPUART3   /*!< Device name: LPUART3 */
-#define LPUART3_INITPINS_CSI_HSYNC_SIGNAL                                     RX   /*!< LPUART3 signal: RX */
+#define BOARD_INITARDUINO_UARTPINS_CSI_HSYNC_PERIPHERAL                  LPUART3   /*!< Device name: LPUART3 */
+#define BOARD_INITARDUINO_UARTPINS_CSI_HSYNC_SIGNAL                           RX   /*!< LPUART3 signal: RX */
 
 
 /*!
- * @brief Configures pin routing and optionally pin electrical features.
+ * @brief Configures pin routing and optionally pin electrical features for Arduino UART (Digital Pins 0-1, RX/TX).
  *
  */
-void LPUART3_InitPins(void);
-
-/* GPIO_AD_B1_07 (coord K10), CSI_HSYNC/J35[16]/J22[1]/UART_RX */
-#define LPUART3_DEINITPINS_CSI_HSYNC_PERIPHERAL                          LPUART3   /*!< Device name: LPUART3 */
-#define LPUART3_DEINITPINS_CSI_HSYNC_SIGNAL                                   RX   /*!< LPUART3 signal: RX */
-
-/* GPIO_AD_B1_06 (coord J12), CSI_VSYNC/J35[18]/J22[2]/UART_TX */
-#define LPUART3_DEINITPINS_CSI_VSYNC_PERIPHERAL                          LPUART3   /*!< Device name: LPUART3 */
-#define LPUART3_DEINITPINS_CSI_VSYNC_SIGNAL                                   TX   /*!< LPUART3 signal: TX */
-
-
-/*!
- * @brief Configures pin routing and optionally pin electrical features.
- *
- */
-void LPUART3_DeinitPins(void);
+void BOARD_InitARDUINO_UARTPins(void);
 
 /* GPIO_SD_B0_00 (coord J4), SD1_CMD/J24[6] */
-#define LPSPI1_INITPINS_SD1_CMD_PERIPHERAL                                LPSPI1   /*!< Device name: LPSPI1 */
-#define LPSPI1_INITPINS_SD1_CMD_SIGNAL                                       SCK   /*!< LPSPI1 signal: SCK */
+#define BOARD_INITARDUINO_SPIPINS_SD1_CMD_PERIPHERAL                      LPSPI1   /*!< Device name: LPSPI1 */
+#define BOARD_INITARDUINO_SPIPINS_SD1_CMD_SIGNAL                             SCK   /*!< LPSPI1 signal: SCK */
 
 /* GPIO_SD_B0_01 (coord J3), SD1_CLK/J24[3] */
-#define LPSPI1_INITPINS_SD1_CLK_PERIPHERAL                                LPSPI1   /*!< Device name: LPSPI1 */
-#define LPSPI1_INITPINS_SD1_CLK_SIGNAL                                      PCS0   /*!< LPSPI1 signal: PCS0 */
+#define BOARD_INITARDUINO_SPIPINS_SD1_CLK_PERIPHERAL                      LPSPI1   /*!< Device name: LPSPI1 */
+#define BOARD_INITARDUINO_SPIPINS_SD1_CLK_SIGNAL                            PCS0   /*!< LPSPI1 signal: PCS0 */
 
 /* GPIO_SD_B0_02 (coord J1), SD1_D0/J24[4]/SPI_MOSI/PWM */
-#define LPSPI1_INITPINS_SD1_D0_PERIPHERAL                                 LPSPI1   /*!< Device name: LPSPI1 */
-#define LPSPI1_INITPINS_SD1_D0_SIGNAL                                        SDO   /*!< LPSPI1 signal: SDO */
+#define BOARD_INITARDUINO_SPIPINS_SD1_D0_PERIPHERAL                       LPSPI1   /*!< Device name: LPSPI1 */
+#define BOARD_INITARDUINO_SPIPINS_SD1_D0_SIGNAL                              SDO   /*!< LPSPI1 signal: SDO */
 
 /* GPIO_SD_B0_03 (coord K1), SD1_D1/J24[5]/SPI_MISO */
-#define LPSPI1_INITPINS_SD1_D1_PERIPHERAL                                 LPSPI1   /*!< Device name: LPSPI1 */
-#define LPSPI1_INITPINS_SD1_D1_SIGNAL                                        SDI   /*!< LPSPI1 signal: SDI */
+#define BOARD_INITARDUINO_SPIPINS_SD1_D1_PERIPHERAL                       LPSPI1   /*!< Device name: LPSPI1 */
+#define BOARD_INITARDUINO_SPIPINS_SD1_D1_SIGNAL                              SDI   /*!< LPSPI1 signal: SDI */
 
 
 /*!
- * @brief Configures pin routing and optionally pin electrical features.
+ * @brief Configures pin routing and optionally pin electrical features for Arduino SPI (Digital Pins 10-13, SS/MOSI/MISO/SCK).
  *
  */
-void LPSPI1_InitPins(void);
+void BOARD_InitARDUINO_SPIPins(void);
 
 
 /*!
- * @brief Configures pin routing and optionally pin electrical features.
+ * @brief Configures pin routing and optionally pin electrical features for Arduino I2C (Digital Pins 14-15, SDA/SCL).
  *
  */
-void LPSPI1_DeinitPins(void);
-
-
-/*!
- * @brief Configures pin routing and optionally pin electrical features.
- *
- */
-void LPI2C1_InitPins(void);
-
-
-/*!
- * @brief Configures pin routing and optionally pin electrical features.
- *
- */
-void LPI2C1_DeinitPins(void);
+void BOARD_InitARDUINO_I2CPins(void);
 
 #if defined(__cplusplus)
 }

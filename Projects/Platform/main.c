@@ -22,15 +22,16 @@
 
 #include "main.h"
 
-#include "cmsis_os2.h"                  // ::CMSIS:RTOS2
-#include "RTE_Components.h"             // Component selection
+#include "cmsis_os2.h"
+#include "RTE_Components.h"
 #ifdef RTE_VIO_BOARD
-#include "cmsis_vio.h"                  // ::CMSIS Driver:VIO
+#include "cmsis_vio.h"
 #endif
 
-#include "peripherals.h"                // Keil::Board Support:SDK Project Template:Project_Template
-#include "pin_mux.h"                    // Keil::Board Support:SDK Project Template:Project_Template
-#include "board.h"                      // Keil::Board Support:SDK Project Template:Project_Template
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "board.h"
+#include "clock_config.h"
 
 /*---------------------------------------------------------------------------
   Main function
@@ -42,6 +43,8 @@ int main (void) {
   BOARD_InitBootPins ();
   BOARD_InitBootClocks ();
 
+  SystemCoreClockUpdate();
+
   #ifdef RTE_VIO_BOARD
   vioInit ();
   #endif
@@ -51,4 +54,58 @@ int main (void) {
   osKernelStart ();                     // Start thread execution
 
   for (;;) {}
+}
+
+/*---------------------------------------------------------------------------
+  CMSIS-Driver SPI1 configuration
+ *---------------------------------------------------------------------------*/
+extern uint32_t LPSPI1_GetFreq    (void);
+extern void     LPSPI1_InitPins   (void);
+extern void     LPSPI1_DeinitPins (void);
+
+void LPSPI1_InitPins (void) {
+  // Pins are configured in BOARD_InitBootPins.
+}
+void LPSPI1_DeinitPins (void) {
+  // Add pin de-init if required.
+}
+uint32_t LPSPI1_GetFreq (void) {
+  // Return peripheral input clock.
+  return BOARD_BOOTCLOCKRUN_LPSPI_CLK_ROOT;
+}
+
+/*---------------------------------------------------------------------------
+  CMSIS-Driver USART1 configuration
+ *---------------------------------------------------------------------------*/
+extern void     LPUART1_InitPins   (void);
+extern void     LPUART1_DeinitPins (void);
+extern uint32_t LPUART1_GetFreq    (void);
+
+void LPUART1_InitPins (void) {
+  // Pins are configured in BOARD_InitBootPins.
+}
+void LPUART1_DeinitPins (void) {
+  // Add pin de-init if required.
+}
+uint32_t LPUART1_GetFreq (void) {
+  // Return peripheral input clock.
+  return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT;
+}
+
+/*---------------------------------------------------------------------------
+  CMSIS-Driver USART3 configuration
+ *---------------------------------------------------------------------------*/
+extern void     LPUART3_InitPins   (void);
+extern void     LPUART3_DeinitPins (void);
+extern uint32_t LPUART3_GetFreq    (void);
+
+void LPUART3_InitPins (void) {
+  // Pins are configured in BOARD_InitBootPins.
+}
+void LPUART3_DeinitPins (void) {
+  // Add pin de-init if required.
+}
+uint32_t LPUART3_GetFreq (void) {
+  // Return peripheral input clock.
+  return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT;
 }

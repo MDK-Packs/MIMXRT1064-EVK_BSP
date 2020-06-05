@@ -8,6 +8,9 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev1">
+      Examples updated.
+    </release>
     <release version="1.0.0-dev0">
       Initial development version.
     </release>

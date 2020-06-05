@@ -6,7 +6,7 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v7.0
+product: Pins v8.0
 processor: MIMXRT1064xxxxA
 package_id: MIMXRT1064DVL6A
 mcu_data: ksdk2_0
@@ -30,10 +30,11 @@ pin_labels:
  * 
  * END ****************************************************************************************************************/
 void BOARD_InitBootPins(void) {
+    BOARD_InitDEBUG_UARTPins();
     BOARD_InitLEDPins();
     BOARD_InitButtonsPins();
-    LPUART1_InitPins();
-    LPUART1_DeinitPins();
+    BOARD_InitARDUINO_UARTPins();
+    BOARD_InitARDUINO_SPIPins();
 }
 
 /*
@@ -57,7 +58,7 @@ void BOARD_InitPins(void) {
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 BOARD_InitDEBUG_UARTPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
+- options: {callFromInitBoot: 'true', coreID: core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: K14, peripheral: LPUART1, signal: TX, pin_signal: GPIO_AD_B0_12, software_input_on: Disable, hysteresis_enable: Disable, pull_up_down_config: Pull_Down_100K_Ohm,
     pull_keeper_select: Keeper, pull_keeper_enable: Enable, open_drain: Disable, speed: MHZ_100, drive_strength: R0_6, slew_rate: Slow}
@@ -983,54 +984,8 @@ void BOARD_InitButtonsPins(void) {
 
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPUART1_InitPins:
+BOARD_InitARDUINO_UARTPins:
 - options: {callFromInitBoot: 'true', coreID: core0, enableClock: 'true'}
-- pin_list:
-  - {pin_num: L14, peripheral: LPUART1, signal: RX, pin_signal: GPIO_AD_B0_13}
-  - {pin_num: K14, peripheral: LPUART1, signal: TX, pin_signal: GPIO_AD_B0_12}
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : LPUART1_InitPins
- * Description   : Configures pin routing and optionally pin electrical features.
- *
- * END ****************************************************************************************************************/
-void LPUART1_InitPins(void) {
-  CLOCK_EnableClock(kCLOCK_Iomuxc);           /* iomuxc clock (iomuxc_clk_enable): 0x03U */
-
-  IOMUXC_SetPinMux(
-      IOMUXC_GPIO_AD_B0_12_LPUART1_TX,        /* GPIO_AD_B0_12 is configured as LPUART1_TX */
-      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
-  IOMUXC_SetPinMux(
-      IOMUXC_GPIO_AD_B0_13_LPUART1_RX,        /* GPIO_AD_B0_13 is configured as LPUART1_RX */
-      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
-}
-
-
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPUART1_DeinitPins:
-- options: {callFromInitBoot: 'true', coreID: core0, enableClock: 'true'}
-- pin_list: []
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : LPUART1_DeinitPins
- * Description   : Configures pin routing and optionally pin electrical features.
- *
- * END ****************************************************************************************************************/
-void LPUART1_DeinitPins(void) {
-}
-
-
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPUART3_InitPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: J12, peripheral: LPUART3, signal: TX, pin_signal: GPIO_AD_B1_06}
   - {pin_num: K10, peripheral: LPUART3, signal: RX, pin_signal: GPIO_AD_B1_07}
@@ -1039,11 +994,11 @@ LPUART3_InitPins:
 
 /* FUNCTION ************************************************************************************************************
  *
- * Function Name : LPUART3_InitPins
- * Description   : Configures pin routing and optionally pin electrical features.
+ * Function Name : BOARD_InitARDUINO_UARTPins
+ * Description   : Configures pin routing and optionally pin electrical features for Arduino UART (Digital Pins 0-1, RX/TX).
  *
  * END ****************************************************************************************************************/
-void LPUART3_InitPins(void) {
+void BOARD_InitARDUINO_UARTPins(void) {
   CLOCK_EnableClock(kCLOCK_Iomuxc);           /* iomuxc clock (iomuxc_clk_enable): 0x03U */
 
   IOMUXC_SetPinMux(
@@ -1057,36 +1012,8 @@ void LPUART3_InitPins(void) {
 
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPUART3_DeinitPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
-- pin_list:
-  - {pin_num: K10, peripheral: LPUART3, signal: RX, pin_signal: GPIO_AD_B1_07}
-  - {pin_num: J12, peripheral: LPUART3, signal: TX, pin_signal: GPIO_AD_B1_06}
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : LPUART3_DeinitPins
- * Description   : Configures pin routing and optionally pin electrical features.
- *
- * END ****************************************************************************************************************/
-void LPUART3_DeinitPins(void) {
-  CLOCK_EnableClock(kCLOCK_Iomuxc);           /* iomuxc clock (iomuxc_clk_enable): 0x03U */
-
-  IOMUXC_SetPinMux(
-      IOMUXC_GPIO_AD_B1_06_LPUART3_TX,        /* GPIO_AD_B1_06 is configured as LPUART3_TX */
-      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
-  IOMUXC_SetPinMux(
-      IOMUXC_GPIO_AD_B1_07_LPUART3_RX,        /* GPIO_AD_B1_07 is configured as LPUART3_RX */
-      0U);                                    /* Software Input On Field: Input Path is determined by functionality */
-}
-
-
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPSPI1_InitPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
+BOARD_InitARDUINO_SPIPins:
+- options: {callFromInitBoot: 'true', coreID: core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: J4, peripheral: LPSPI1, signal: SCK, pin_signal: GPIO_SD_B0_00}
   - {pin_num: J3, peripheral: LPSPI1, signal: PCS0, pin_signal: GPIO_SD_B0_01}
@@ -1097,11 +1024,11 @@ LPSPI1_InitPins:
 
 /* FUNCTION ************************************************************************************************************
  *
- * Function Name : LPSPI1_InitPins
- * Description   : Configures pin routing and optionally pin electrical features.
+ * Function Name : BOARD_InitARDUINO_SPIPins
+ * Description   : Configures pin routing and optionally pin electrical features for Arduino SPI (Digital Pins 10-13, SS/MOSI/MISO/SCK).
  *
  * END ****************************************************************************************************************/
-void LPSPI1_InitPins(void) {
+void BOARD_InitARDUINO_SPIPins(void) {
   CLOCK_EnableClock(kCLOCK_Iomuxc);           /* iomuxc clock (iomuxc_clk_enable): 0x03U */
 
   IOMUXC_SetPinMux(
@@ -1121,25 +1048,7 @@ void LPSPI1_InitPins(void) {
 
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPSPI1_DeinitPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
-- pin_list: []
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : LPSPI1_DeinitPins
- * Description   : Configures pin routing and optionally pin electrical features.
- *
- * END ****************************************************************************************************************/
-void LPSPI1_DeinitPins(void) {
-}
-
-
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPI2C1_InitPins:
+BOARD_InitARDUINO_I2CPins:
 - options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: J11, peripheral: LPI2C1, signal: SCL, pin_signal: GPIO_AD_B1_00}
@@ -1149,11 +1058,11 @@ LPI2C1_InitPins:
 
 /* FUNCTION ************************************************************************************************************
  *
- * Function Name : LPI2C1_InitPins
- * Description   : Configures pin routing and optionally pin electrical features.
+ * Function Name : BOARD_InitARDUINO_I2CPins
+ * Description   : Configures pin routing and optionally pin electrical features for Arduino I2C (Digital Pins 14-15, SDA/SCL).
  *
  * END ****************************************************************************************************************/
-void LPI2C1_InitPins(void) {
+void BOARD_InitARDUINO_I2CPins(void) {
   CLOCK_EnableClock(kCLOCK_Iomuxc);           /* iomuxc clock (iomuxc_clk_enable): 0x03U */
 
   IOMUXC_SetPinMux(
@@ -1162,24 +1071,6 @@ void LPI2C1_InitPins(void) {
   IOMUXC_SetPinMux(
       IOMUXC_GPIO_AD_B1_01_LPI2C1_SDA,        /* GPIO_AD_B1_01 is configured as LPI2C1_SDA */
       0U);                                    /* Software Input On Field: Input Path is determined by functionality */
-}
-
-
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-LPI2C1_DeinitPins:
-- options: {callFromInitBoot: 'false', coreID: core0, enableClock: 'true'}
-- pin_list: []
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : LPI2C1_DeinitPins
- * Description   : Configures pin routing and optionally pin electrical features.
- *
- * END ****************************************************************************************************************/
-void LPI2C1_DeinitPins(void) {
 }
 
 /***********************************************************************************************************************

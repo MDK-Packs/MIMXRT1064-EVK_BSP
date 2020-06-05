@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
-<configuration name="MIMXRT1064-EVK" version="1.7" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7 http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7.xsd" uuid="d75e55f6-68ab-46ef-814b-b94593af7f06" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<configuration name="MIMXRT1064-EVK" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8 http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8.xsd" uuid="d75e55f6-68ab-46ef-814b-b94593af7f06" version="1.8" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <common>
       <processor>MIMXRT1064xxxxA</processor>
       <package>MIMXRT1064DVL6A</package>
@@ -17,7 +17,7 @@
       <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
    </preferences>
    <tools>
-      <pins name="Pins" version="7.0" enabled="true" update_project_code="true">
+      <pins name="Pins" version="8.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/pin_mux.c" update_enabled="true"/>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/pin_mux.h" update_enabled="true"/>
@@ -50,7 +50,7 @@
             <function name="BOARD_InitDEBUG_UARTPins">
                <description>Configures pin routing and optionally pin electrical features.</description>
                <options>
-                  <callFromInitBoot>false</callFromInitBoot>
+                  <callFromInitBoot>true</callFromInitBoot>
                   <coreID>core0</coreID>
                   <enableClock>true</enableClock>
                </options>
@@ -608,70 +608,25 @@
                   </pin>
                </pins>
             </function>
-            <function name="LPUART1_InitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
+            <function name="BOARD_InitARDUINO_UARTPins">
+               <description>Configures pin routing and optionally pin electrical features for Arduino UART (Digital Pins 0-1, RX/TX).</description>
                <options>
                   <callFromInitBoot>true</callFromInitBoot>
                   <coreID>core0</coreID>
                   <enableClock>true</enableClock>
                </options>
                <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="LPUART1" description="Peripheral LPUART1 is not initialized" problem_level="1" source="Pins:LPUART1_InitPins">
+                  <dependency resourceType="Peripheral" resourceId="LPUART3" description="Peripheral LPUART3 is not initialized" problem_level="1" source="Pins:BOARD_InitARDUINO_UARTPins">
                      <feature name="initialized" evaluation="equal">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPUART1_InitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_UARTPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:LPUART1_InitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins>
-                  <pin peripheral="LPUART1" signal="RX" pin_num="L14" pin_signal="GPIO_AD_B0_13"/>
-                  <pin peripheral="LPUART1" signal="TX" pin_num="K14" pin_signal="GPIO_AD_B0_12"/>
-               </pins>
-            </function>
-            <function name="LPUART1_DeinitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
-               <options>
-                  <callFromInitBoot>true</callFromInitBoot>
-                  <coreID>core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPUART1_DeinitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins/>
-            </function>
-            <function name="LPUART3_InitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="LPUART3" description="Peripheral LPUART3 is not initialized" problem_level="1" source="Pins:LPUART3_InitPins">
-                     <feature name="initialized" evaluation="equal">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPUART3_InitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:LPUART3_InitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_UARTPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
@@ -682,54 +637,25 @@
                   <pin peripheral="LPUART3" signal="RX" pin_num="K10" pin_signal="GPIO_AD_B1_07"/>
                </pins>
             </function>
-            <function name="LPUART3_DeinitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
+            <function name="BOARD_InitARDUINO_SPIPins">
+               <description>Configures pin routing and optionally pin electrical features for Arduino SPI (Digital Pins 10-13, SS/MOSI/MISO/SCK).</description>
                <options>
-                  <callFromInitBoot>false</callFromInitBoot>
+                  <callFromInitBoot>true</callFromInitBoot>
                   <coreID>core0</coreID>
                   <enableClock>true</enableClock>
                </options>
                <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="LPUART3" description="Peripheral LPUART3 is not initialized" problem_level="1" source="Pins:LPUART3_DeinitPins">
+                  <dependency resourceType="Peripheral" resourceId="LPSPI1" description="Peripheral LPSPI1 is not initialized" problem_level="1" source="Pins:BOARD_InitARDUINO_SPIPins">
                      <feature name="initialized" evaluation="equal">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPUART3_DeinitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_SPIPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:LPUART3_DeinitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins>
-                  <pin peripheral="LPUART3" signal="RX" pin_num="K10" pin_signal="GPIO_AD_B1_07"/>
-                  <pin peripheral="LPUART3" signal="TX" pin_num="J12" pin_signal="GPIO_AD_B1_06"/>
-               </pins>
-            </function>
-            <function name="LPSPI1_InitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="LPSPI1" description="Peripheral LPSPI1 is not initialized" problem_level="1" source="Pins:LPSPI1_InitPins">
-                     <feature name="initialized" evaluation="equal">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPSPI1_InitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:LPSPI1_InitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_SPIPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
@@ -742,41 +668,25 @@
                   <pin peripheral="LPSPI1" signal="SDI" pin_num="K1" pin_signal="GPIO_SD_B0_03"/>
                </pins>
             </function>
-            <function name="LPSPI1_DeinitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
+            <function name="BOARD_InitARDUINO_I2CPins">
+               <description>Configures pin routing and optionally pin electrical features for Arduino I2C (Digital Pins 14-15, SDA/SCL).</description>
                <options>
                   <callFromInitBoot>false</callFromInitBoot>
                   <coreID>core0</coreID>
                   <enableClock>true</enableClock>
                </options>
                <dependencies>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPSPI1_DeinitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins/>
-            </function>
-            <function name="LPI2C1_InitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="LPI2C1" description="Peripheral LPI2C1 is not initialized" problem_level="1" source="Pins:LPI2C1_InitPins">
+                  <dependency resourceType="Peripheral" resourceId="LPI2C1" description="Peripheral LPI2C1 is not initialized" problem_level="1" source="Pins:BOARD_InitARDUINO_I2CPins">
                      <feature name="initialized" evaluation="equal">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPI2C1_InitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_I2CPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
                   </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:LPI2C1_InitPins">
+                  <dependency resourceType="SWComponent" resourceId="platform.drivers.iomuxc" description="Pins initialization requires the IOMUXC Driver in the project." problem_level="2" source="Pins:BOARD_InitARDUINO_I2CPins">
                      <feature name="enabled" evaluation="equal" configuration="core0">
                         <data>true</data>
                      </feature>
@@ -786,22 +696,6 @@
                   <pin peripheral="LPI2C1" signal="SCL" pin_num="J11" pin_signal="GPIO_AD_B1_00"/>
                   <pin peripheral="LPI2C1" signal="SDA" pin_num="K11" pin_signal="GPIO_AD_B1_01"/>
                </pins>
-            </function>
-            <function name="LPI2C1_DeinitPins">
-               <description>Configures pin routing and optionally pin electrical features.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:LPI2C1_DeinitPins">
-                     <feature name="enabled" evaluation="equal" configuration="core0">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins/>
             </function>
          </functions_list>
       </pins>
@@ -962,7 +856,7 @@
          </dcdx_profile>
          <dcdx_configurations/>
       </dcdx>
-      <periphs name="Peripherals" version="7.0" enabled="true" update_project_code="true">
+      <periphs name="Peripherals" version="8.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/peripherals.c" update_enabled="true"/>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/peripherals.h" update_enabled="true"/>
@@ -1194,12 +1088,12 @@
             <component name="system" uuid="e3b5350d-71f2-4bdd-9863-f0e8e975f046" type_id="system_54b53072540eeeb8f8e9343e71f28176">
                <config_set_global name="global_system_definitions"/>
             </component>
-            <component name="msg" uuid="60d69cf8-1ab8-46e7-baca-f9abdfa282fe" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
+            <component name="msg" uuid="2cefb4c2-2d3c-42ed-a9ab-7670fac02794" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
                <config_set_global name="global_messages"/>
             </component>
          </components>
       </periphs>
-      <tee name="TEE" version="1.0" enabled="false" update_project_code="true">
+      <tee name="TEE" version="2.0" enabled="false" update_project_code="true">
          <generated_project_files/>
          <tee_profile>
             <processor_version>N/A</processor_version>

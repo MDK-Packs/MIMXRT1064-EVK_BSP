@@ -22,15 +22,15 @@
 
 #include "main.h"
 
-#include "cmsis_os2.h"                  // ::CMSIS:RTOS2
-#include "RTE_Components.h"             // Component selection
+#include "cmsis_os2.h"
+#include "RTE_Components.h"
 #ifdef RTE_VIO_BOARD
-#include "cmsis_vio.h"                  // ::CMSIS Driver:VIO
+#include "cmsis_vio.h"
 #endif
 
-#include "peripherals.h"                // Keil::Board Support:SDK Project Template:Project_Template
-#include "pin_mux.h"                    // Keil::Board Support:SDK Project Template:Project_Template
-#include "board.h"                      // Keil::Board Support:SDK Project Template:Project_Template
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "board.h"
 
 /*---------------------------------------------------------------------------
   Main function
@@ -41,6 +41,8 @@ int main (void) {
   BOARD_InitBootPeripherals ();
   BOARD_InitBootPins ();
   BOARD_InitBootClocks ();
+
+  SystemCoreClockUpdate();
 
   #ifdef RTE_VIO_BOARD
   vioInit ();
