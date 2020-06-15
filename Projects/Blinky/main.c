@@ -38,19 +38,19 @@
 int main (void) {
 
   // System initialization
-  BOARD_InitBootPeripherals ();
-  BOARD_InitBootPins ();
-  BOARD_InitBootClocks ();
+  BOARD_InitBootPeripherals();
+  BOARD_InitBootPins();
+  BOARD_InitBootClocks();
 
   SystemCoreClockUpdate();
 
   #ifdef RTE_VIO_BOARD
-  vioInit ();
+  vioInit();
   #endif
 
-  osKernelInitialize ();                // Initialize CMSIS-RTOS2
-  osThreadNew (app_main, NULL, NULL);   // Create application main thread
-  osKernelStart ();                     // Start thread execution
+  osKernelInitialize();                 // Initialize CMSIS-RTOS2
+  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  osKernelStart();                      // Start thread execution
 
   for (;;) {}
 }

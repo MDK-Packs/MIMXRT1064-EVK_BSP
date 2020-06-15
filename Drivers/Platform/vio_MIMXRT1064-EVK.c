@@ -1,11 +1,11 @@
 /******************************************************************************
  * @file     vio_MIMXRT1064-EVK.c
- * @brief    Virtual I/O implemenation for board MIMXRT1064-EVK
+ * @brief    Virtual I/O implementation for board MIMXRT1064-EVK
  * @version  V1.0.0
  * @date     26. March 2020
  ******************************************************************************/
 /*
- * Copyright (c) 2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -67,84 +67,7 @@ __USED vioAddrIPv4_t vioAddrIPv4[VIO_IPV4_ADDRESS_NUM];                 // Memor
 __USED vioAddrIPv6_t vioAddrIPv6[VIO_IPV6_ADDRESS_NUM];                 // Memory for IPv6 address value used in vioSetIPv6/vioGetIPv6
 
 #if !defined CMSIS_VOUT
-static char         ip_ascii[40];       // string buffer for IP address conversion
-
-/**
-  convert IP4 address to ASCII
-
-  \param[in]   ip4_addr   pointer to IP4 address.
-  \param[out]  buf        pointer to ascii buffer.
-  \param[in]   buf_len    length of a buffer (16 bytes)
-*/
-static void ip4_2a (const uint8_t *ip4_addr, char *buf, uint32_t buf_len) {
-  if (buf_len < 16U) {
-    return;
-  }
-  sprintf (buf, "%d.%d.%d.%d", ip4_addr[0], ip4_addr[1], ip4_addr[2], ip4_addr[3]);
-}
-
-/**
-  convert IP6 address to ASCII
-
-  \param[in]   ip6_addr   pointer to IP6 address.
-  \param[out]  buf        pointer to ascii buffer.
-  \param[in]   buf_len    length of a buffer (40 bytes)
-*/
-static void ip6_2a (const uint8_t *ip6_addr, char *buf, uint32_t buf_len) {
-  uint16_t v16[8];
-  int32_t i, j, nmax, idx;
-
-  if (buf_len < 40U) {
-    return;
-  }
-
-  /* Read IPv6 address in hextets */
-  for (i = 0; i < 16; i += 2) {
-    v16[i >> 1] = (uint16_t)(ip6_addr[i] << 8) | ip6_addr[i+1];
-  }
-
-  /* Find the largest block of consecutive zero hextets */
-  idx = 8;
-  for (i = nmax = 0; i < 8-1; i++) {
-    if (v16[i] != 0U) {
-      continue;
-    }
-    for (j = i; j < 8-1; j++) {
-      if (v16[j+1] != 0U) {
-        break;
-      }
-    }
-    if (i == j) {
-      continue;
-    }
-    if ((j - i) >= nmax) {
-      /* Remember position and count */
-      nmax = j - i + 1;
-      idx  = i;
-    }
-    /* Skip already processed zero hextets */
-    i = j;
-  }
-  for (i = j = 0; i < idx;  ) {
-    j += sprintf (&buf[j], "%x", v16[i]);
-    if (++i == idx) {
-      break;
-    }
-    buf[j++] = ':';
-  }
-  if (i < 8) {
-    /* Right-end not yet complete */
-    buf[j++] = ':';
-    for (i += nmax; i < 8; i++) {
-      j += sprintf (&buf[j], ":%x", v16[i]);
-    }
-    if (buf[j-1] == ':') {
-      buf[j++] = ':';
-    }
-  }
-  /* Make string null-terminated */
-  buf[j] = 0;
-}
+// Add global user types, variables, functions here:
 
 #endif
 
@@ -228,8 +151,8 @@ void vioSetSignal (uint32_t mask, uint32_t signal) {
 #if !defined CMSIS_VOUT
   // Output signals to LEDs
 
-  if (mask & vioLED1) {
-    if (signal & vioLED1) {
+  if (mask & vioLED0) {
+    if (signal & vioLED0) {
       USER_LED_ON();
     } else {
       USER_LED_OFF();
@@ -365,8 +288,8 @@ void vioSetIPv4 (uint32_t id, vioAddrIPv4_t addrIPv4) {
   vioAddrIPv4[index] = addrIPv4;
 
 #if !defined CMSIS_VOUT
-  // Convert IP4 address to ASCII
-  ip4_2a((uint8_t *)&vioAddrIPv4[index], ip_ascii, sizeof(ip_ascii));
+// Add user code here:
+
 #endif
 }
 
@@ -409,8 +332,8 @@ void vioSetIPv6 (uint32_t id, vioAddrIPv6_t addrIPv6) {
   vioAddrIPv6[index] = addrIPv6;
 
 #if !defined CMSIS_VOUT
-  // Convert IP6 address to ASCII
-  ip6_2a((uint8_t *)&vioAddrIPv6[index], ip_ascii, sizeof(ip_ascii));
+// Add user code here:
+
 #endif
 }
 

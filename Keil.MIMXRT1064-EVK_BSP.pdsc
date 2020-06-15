@@ -8,6 +8,9 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev2">
+      Minor fixes.
+    </release>
     <release version="1.0.0-dev1">
       Examples updated.
     </release>
@@ -51,7 +54,7 @@
       <description>Virtual I/O implementation for MIMXRT1064-EVK VIO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
-        #define RTE_VIO_MIMXRT1064_EVK_VIO
+        #define RTE_VIO_MIMXRT1064_EVK
       </RTE_Components_h>
       <files>
         <file category="source" name="Drivers/Platform/vio_MIMXRT1064-EVK.c"/>
