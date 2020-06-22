@@ -419,9 +419,9 @@
           <GroupName>Documentation</GroupName>
           <Files>
             <File>
-              <FileName>Abstract.txt</FileName>
+              <FileName>Abstract.md</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Abstract.txt</FilePath>
+              <FilePath>.\Abstract.md</FilePath>
             </File>
           </Files>
         </Group>
@@ -950,18 +950,6 @@
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" name="MIMXRT1064.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Csub="MIMXRT1064_startup" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND_CMSIS_Include_core_cm7"/>
-        <package license="Licenses.txt" name="MIMXRT1064_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.0.0"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="header" name="MIMXRT1064_features.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Csub="MIMXRT1064_startup" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND_CMSIS_Include_core_cm7"/>
-        <package license="Licenses.txt" name="MIMXRT1064_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.0.0"/>
-        <targetInfos/>
-      </file>
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_flexspi_nor.scf" version="1.0.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Csub="MIMXRT1064_startup" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND__armclang_OR_iar_"/>
@@ -1001,12 +989,6 @@
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
-      </file>
-      <file attr="config" category="header" name="fsl_device_registers.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Csub="MIMXRT1064_startup" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND_CMSIS_Include_core_cm7"/>
-        <package license="Licenses.txt" name="MIMXRT1064_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.0.0"/>
-        <targetInfos/>
       </file>
       <file attr="config" category="sourceAsm" condition="mdk" name="arm\startup_MIMXRT1064.s" version="1.0.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\startup_MIMXRT1064.s</instance>

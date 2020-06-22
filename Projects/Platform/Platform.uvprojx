@@ -375,7 +375,7 @@
             <IncludeLibsPath></IncludeLibsPath>
             <Misc>--remove --keep=*(.boot_hdr.ivt) --keep=*(.boot_hdr.boot_data) --keep=*(.boot_hdr.conf) --predefine="-DXIP_BOOT_HEADER_ENABLE=1"</Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings>6314</DisabledWarnings>
+            <DisabledWarnings>6314,6329</DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>

@@ -8,6 +8,9 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev3">
+      Abstract (Blinky) now uses into markdown
+    </release>
     <release version="1.0.0-dev2">
       Minor fixes.
     </release>
@@ -81,7 +84,7 @@
   </boards>
 
   <examples>
-    <example name="Blinky" doc="Abstract.txt" folder="Projects/Blinky">
+    <example name="Blinky" doc="Abstract.md" folder="Projects/Blinky">
       <description>CMSIS-RTOS2 Blinky example with VIO</description>
       <board name="EVK-MIMXRT1064" vendor="NXP"/>
       <project>

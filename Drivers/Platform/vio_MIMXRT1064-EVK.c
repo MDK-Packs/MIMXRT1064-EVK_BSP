@@ -45,8 +45,6 @@ vioLED0           | vioSignalOut.0 | GPIO_AD_B0_09 (USER_LED)                   
 #include "peripherals.h"
 #include "pin_mux.h"
 #include "board.h"
-
-#include "cmsis_os2.h"
 #endif
 
 // VIO input, output definitions
