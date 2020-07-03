@@ -14,98 +14,62 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- *      Name:    main.c
- *      Purpose: Main function
- *
  *---------------------------------------------------------------------------*/
 
-#include "main.h"
-
-#include "cmsis_os2.h"
 #include "RTE_Components.h"
+#include  CMSIS_device_header
+#include "cmsis_os2.h"
 #ifdef RTE_VIO_BOARD
 #include "cmsis_vio.h"
 #endif
+#ifdef RTE_Compiler_EventRecorder
+#include "EventRecorder.h"
+#endif
 
-#include "peripherals.h"
-#include "pin_mux.h"
-#include "board.h"
 #include "clock_config.h"
+#include "board.h"
+#include "pin_mux.h"
+#include "fsl_iomuxc.h"
+#include "main.h"
 
-/*---------------------------------------------------------------------------
-  Main function
- *---------------------------------------------------------------------------*/
+// Callbacks for LPUART1 Driver
+uint32_t LPUART1_GetFreq   (void) { return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT; }
+void     LPUART1_InitPins  (void) { /* Done in BOARD_InitDEBUG_UART function */ }
+void     LPUART1_DeinitPins(void) { /* Not implemented */ }
+
+// Callbacks for LPUART3 Driver
+uint32_t LPUART3_GetFreq   (void) { return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT; }
+void     LPUART3_InitPins  (void) { /* Done in BOARD_InitARDUINO_UART function */ }
+void     LPUART3_DeinitPins(void) { /* Not implemented */ }
+
 int main (void) {
 
-  // System initialization
-  BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
+  BOARD_InitDebugConsole();
+
+  // GPIO_B1_10 is configured as ENET_REF_CLK
+  // Software Input On Field: Force input path of pad GPIO_B1_10
+  IOMUXC_SetPinMux(IOMUXC_GPIO_B1_10_ENET_REF_CLK, 1U);
+
+  // Enable ENET_REF_CLK output mode
+  IOMUXC_EnableMode(IOMUXC_GPR, kIOMUXC_GPR_ENET1TxClkOutputDir, true);
 
   SystemCoreClockUpdate();
 
-  #ifdef RTE_VIO_BOARD
-  vioInit();
-  #endif
+#ifdef RTE_VIO_BOARD
+  vioInit();                            // Initialize Virtual I/O
+#endif
+
+#if defined(RTE_Compiler_EventRecorder) && \
+    (defined(__MICROLIB) || \
+    !(defined(RTE_CMSIS_RTOS2_RTX5) || defined(RTE_CMSIS_RTOS2_FreeRTOS)))
+  EventRecorderInitialize(EventRecordAll, 1U);
+#endif
 
   osKernelInitialize();                 // Initialize CMSIS-RTOS2
-  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  app_initialize();                     // Initialize application
   osKernelStart();                      // Start thread execution
 
   for (;;) {}
-}
-
-/*---------------------------------------------------------------------------
-  CMSIS-Driver SPI1 configuration
- *---------------------------------------------------------------------------*/
-extern uint32_t LPSPI1_GetFreq    (void);
-extern void     LPSPI1_InitPins   (void);
-extern void     LPSPI1_DeinitPins (void);
-
-void LPSPI1_InitPins (void) {
-  // Pins are configured in BOARD_InitBootPins.
-}
-void LPSPI1_DeinitPins (void) {
-  // Add pin de-init if required.
-}
-uint32_t LPSPI1_GetFreq (void) {
-  // Return peripheral input clock.
-  return BOARD_BOOTCLOCKRUN_LPSPI_CLK_ROOT;
-}
-
-/*---------------------------------------------------------------------------
-  CMSIS-Driver USART1 configuration
- *---------------------------------------------------------------------------*/
-extern void     LPUART1_InitPins   (void);
-extern void     LPUART1_DeinitPins (void);
-extern uint32_t LPUART1_GetFreq    (void);
-
-void LPUART1_InitPins (void) {
-  // Pins are configured in BOARD_InitBootPins.
-}
-void LPUART1_DeinitPins (void) {
-  // Add pin de-init if required.
-}
-uint32_t LPUART1_GetFreq (void) {
-  // Return peripheral input clock.
-  return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT;
-}
-
-/*---------------------------------------------------------------------------
-  CMSIS-Driver USART3 configuration
- *---------------------------------------------------------------------------*/
-extern void     LPUART3_InitPins   (void);
-extern void     LPUART3_DeinitPins (void);
-extern uint32_t LPUART3_GetFreq    (void);
-
-void LPUART3_InitPins (void) {
-  // Pins are configured in BOARD_InitBootPins.
-}
-void LPUART3_DeinitPins (void) {
-  // Add pin de-init if required.
-}
-uint32_t LPUART3_GetFreq (void) {
-  // Return peripheral input clock.
-  return BOARD_BOOTCLOCKRUN_UART_CLK_ROOT;
 }

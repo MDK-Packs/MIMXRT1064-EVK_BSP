@@ -58,11 +58,11 @@ outputs:
 - {id: CLK_1M.outFreq, value: 1 MHz}
 - {id: CLK_24M.outFreq, value: 24 MHz}
 - {id: CSI_CLK_ROOT.outFreq, value: 12 MHz}
-- {id: ENET1_TX_CLK.outFreq, value: 2.4 MHz}
-- {id: ENET2_125M_CLK.outFreq, value: 1.2 MHz}
-- {id: ENET2_TX_CLK.outFreq, value: 1.2 MHz}
-- {id: ENET_125M_CLK.outFreq, value: 2.4 MHz}
-- {id: ENET_25M_REF_CLK.outFreq, value: 1.2 MHz}
+- {id: ENET1_TX_CLK.outFreq, value: 50 MHz}
+- {id: ENET2_125M_CLK.outFreq, value: 50 MHz}
+- {id: ENET2_TX_CLK.outFreq, value: 50 MHz}
+- {id: ENET_125M_CLK.outFreq, value: 50 MHz}
+- {id: ENET_25M_REF_CLK.outFreq, value: 25 MHz}
 - {id: FLEXIO1_CLK_ROOT.outFreq, value: 30 MHz}
 - {id: FLEXIO2_CLK_ROOT.outFreq, value: 30 MHz}
 - {id: FLEXSPI2_CLK_ROOT.outFreq, value: 1440/11 MHz}
@@ -104,6 +104,7 @@ settings:
 - {id: CCM.PERCLK_PODF.scale, value: '2', locked: true}
 - {id: CCM.SEMC_PODF.scale, value: '8'}
 - {id: CCM.TRACE_PODF.scale, value: '3', locked: true}
+- {id: CCM_ANALOG.ENET2_DIV.scale, value: '10', locked: true}
 - {id: CCM_ANALOG.PLL1_BYPASS.sel, value: CCM_ANALOG.PLL1}
 - {id: CCM_ANALOG.PLL1_PREDIV.scale, value: '1', locked: true}
 - {id: CCM_ANALOG.PLL1_VDIV.scale, value: '50', locked: true}
@@ -126,7 +127,7 @@ settings:
 - {id: CCM_ANALOG.PLL5.denom, value: '1'}
 - {id: CCM_ANALOG.PLL5.div, value: '40'}
 - {id: CCM_ANALOG.PLL5.num, value: '0'}
-- {id: CCM_ANALOG_PLL_ENET_POWERDOWN_CFG, value: 'Yes'}
+- {id: CCM_ANALOG.PLL6_BYPASS.sel, value: CCM_ANALOG.PLL6}
 - {id: CCM_ANALOG_PLL_USB1_POWER_CFG, value: 'Yes'}
 sources:
 - {id: XTALOSC24M.RTC_OSC.outFreq, value: 32.768 kHz, enabled: true}
@@ -150,6 +151,15 @@ const clock_sys_pll_config_t sysPllConfig_BOARD_BootClockRUN =
 const clock_usb_pll_config_t usb1PllConfig_BOARD_BootClockRUN =
     {
         .loopDivider = 0,                         /* PLL loop divider, Fout = Fin * 20 */
+        .src = 0,                                 /* Bypass clock source, 0 - OSC 24M, 1 - CLK1_P and CLK1_N */
+    };
+const clock_enet_pll_config_t enetPllConfig_BOARD_BootClockRUN =
+    {
+        .enableClkOutput = true,                  /* Enable the PLL providing the ENET 125MHz reference clock */
+        .enableClkOutput1 = true,                 /* Enable the PLL providing the ENET2 125MHz reference clock */
+        .enableClkOutput25M = true,               /* Enable the PLL providing the ENET 25MHz reference clock */
+        .loopDivider = 1,                         /* Set frequency of ethernet reference clock to 50 MHz */
+        .loopDivider1 = 1,                        /* Set frequency of ethernet reference clock to 50 MHz */
         .src = 0,                                 /* Bypass clock source, 0 - OSC 24M, 1 - CLK1_P and CLK1_N */
     };
 /*******************************************************************************
@@ -411,20 +421,8 @@ void BOARD_BootClockRUN(void)
     CCM_ANALOG->MISC2 = (CCM_ANALOG->MISC2 & (~CCM_ANALOG_MISC2_VIDEO_DIV_MASK)) | CCM_ANALOG_MISC2_VIDEO_DIV(0);
     /* Enable Video PLL output. */
     CCM_ANALOG->PLL_VIDEO |= CCM_ANALOG_PLL_VIDEO_ENABLE_MASK;
-    /* DeInit Enet PLL. */
-    CLOCK_DeinitEnetPll();
-    /* Bypass Enet PLL. */
-    CLOCK_SetPllBypass(CCM_ANALOG, kCLOCK_PllEnet, 1);
-    /* Set Enet output divider. */
-    CCM_ANALOG->PLL_ENET = (CCM_ANALOG->PLL_ENET & (~CCM_ANALOG_PLL_ENET_DIV_SELECT_MASK)) | CCM_ANALOG_PLL_ENET_DIV_SELECT(1);
-    /* Enable Enet output. */
-    CCM_ANALOG->PLL_ENET |= CCM_ANALOG_PLL_ENET_ENABLE_MASK;
-    /* Set Enet2 output divider. */
-    CCM_ANALOG->PLL_ENET = (CCM_ANALOG->PLL_ENET & (~CCM_ANALOG_PLL_ENET_ENET2_DIV_SELECT_MASK)) | CCM_ANALOG_PLL_ENET_ENET2_DIV_SELECT(0);
-    /* Enable Enet2 output. */
-    CCM_ANALOG->PLL_ENET |= CCM_ANALOG_PLL_ENET_ENET2_REF_EN_MASK;
-    /* Enable Enet25M output. */
-    CCM_ANALOG->PLL_ENET |= CCM_ANALOG_PLL_ENET_ENET_25M_REF_EN_MASK;
+    /* Init Enet PLL. */
+    CLOCK_InitEnetPll(&enetPllConfig_BOARD_BootClockRUN);
     /* DeInit Usb2 PLL. */
     CLOCK_DeinitUsb2Pll();
     /* Bypass Usb2 PLL. */

@@ -44,11 +44,11 @@ void BOARD_InitBootClocks(void);
 #define BOARD_BOOTCLOCKRUN_CLK_1M                     1000000UL
 #define BOARD_BOOTCLOCKRUN_CLK_24M                    24000000UL
 #define BOARD_BOOTCLOCKRUN_CSI_CLK_ROOT               12000000UL
-#define BOARD_BOOTCLOCKRUN_ENET1_TX_CLK               2400000UL
-#define BOARD_BOOTCLOCKRUN_ENET2_125M_CLK             1200000UL
-#define BOARD_BOOTCLOCKRUN_ENET2_TX_CLK               1200000UL
-#define BOARD_BOOTCLOCKRUN_ENET_125M_CLK              2400000UL
-#define BOARD_BOOTCLOCKRUN_ENET_25M_REF_CLK           1200000UL
+#define BOARD_BOOTCLOCKRUN_ENET1_TX_CLK               50000000UL
+#define BOARD_BOOTCLOCKRUN_ENET2_125M_CLK             50000000UL
+#define BOARD_BOOTCLOCKRUN_ENET2_TX_CLK               50000000UL
+#define BOARD_BOOTCLOCKRUN_ENET_125M_CLK              50000000UL
+#define BOARD_BOOTCLOCKRUN_ENET_25M_REF_CLK           25000000UL
 #define BOARD_BOOTCLOCKRUN_FLEXIO1_CLK_ROOT           30000000UL
 #define BOARD_BOOTCLOCKRUN_FLEXIO2_CLK_ROOT           30000000UL
 #define BOARD_BOOTCLOCKRUN_FLEXSPI2_CLK_ROOT          130909090UL
@@ -94,6 +94,9 @@ extern const clock_usb_pll_config_t usb1PllConfig_BOARD_BootClockRUN;
 /*! @brief Sys PLL for BOARD_BootClockRUN configuration.
  */
 extern const clock_sys_pll_config_t sysPllConfig_BOARD_BootClockRUN;
+/*! @brief Enet PLL set for BOARD_BootClockRUN configuration.
+ */
+extern const clock_enet_pll_config_t enetPllConfig_BOARD_BootClockRUN;
 
 /*******************************************************************************
  * API for BOARD_BootClockRUN configuration

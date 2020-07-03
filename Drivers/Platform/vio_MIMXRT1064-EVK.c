@@ -96,12 +96,12 @@ void vioInit (void) {
 
 #if !defined CMSIS_VOUT
   // Initialize LEDs pins
-  BOARD_InitLEDPins();
+  BOARD_InitUSER_LED();
 #endif
 
 #if !defined CMSIS_VIN
   // Initialize buttons pins
-  BOARD_InitButtonsPins();
+  BOARD_InitUSER_BUTTON();
 #endif
 }
 
@@ -170,7 +170,7 @@ uint32_t vioGetSignal (uint32_t mask) {
 #if !defined CMSIS_VIN
   // Get input signals from buttons
   if (mask & vioBUTTON0) {
-    if (!GPIO_PinRead (BOARD_INITBUTTONSPINS_USER_BUTTON_PORT, BOARD_INITBUTTONSPINS_USER_BUTTON_PIN)) {
+    if (!GPIO_PinRead (BOARD_USER_BUTTON_GPIO, BOARD_USER_BUTTON_GPIO_PIN)) {
       vioSignalIn |=  vioBUTTON0;
     } else {
       vioSignalIn &= ~vioBUTTON0;

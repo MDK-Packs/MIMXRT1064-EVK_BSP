@@ -14,15 +14,11 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- *      Name:    main.h
- *      Purpose: Main function
- *
  *---------------------------------------------------------------------------*/
 
 #ifndef MAIN_H__
 #define MAIN_H__
 
-extern void app_main (void *arg);
+extern void app_initialize (void);
 
-#endif /* MAIN_H__ */
+#endif

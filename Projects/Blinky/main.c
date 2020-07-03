@@ -14,42 +14,43 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- *      Name:    main.c
- *      Purpose: Main function
- *
  *---------------------------------------------------------------------------*/
 
-#include "main.h"
-
-#include "cmsis_os2.h"
 #include "RTE_Components.h"
+#include  CMSIS_device_header
+#include "cmsis_os2.h"
 #ifdef RTE_VIO_BOARD
 #include "cmsis_vio.h"
 #endif
+#ifdef RTE_Compiler_EventRecorder
+#include "EventRecorder.h"
+#endif
 
-#include "peripherals.h"
-#include "pin_mux.h"
+#include "clock_config.h"
 #include "board.h"
+#include "pin_mux.h"
+#include "main.h"
 
-/*---------------------------------------------------------------------------
-  Main function
- *---------------------------------------------------------------------------*/
 int main (void) {
 
-  // System initialization
-  BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
+  BOARD_InitDebugConsole();
 
   SystemCoreClockUpdate();
 
-  #ifdef RTE_VIO_BOARD
-  vioInit();
-  #endif
+#ifdef RTE_VIO_BOARD
+  vioInit();                            // Initialize Virtual I/O
+#endif
+
+#if defined(RTE_Compiler_EventRecorder) && \
+    (defined(__MICROLIB) || \
+    !(defined(RTE_CMSIS_RTOS2_RTX5) || defined(RTE_CMSIS_RTOS2_FreeRTOS)))
+  EventRecorderInitialize(EventRecordAll, 1U);
+#endif
 
   osKernelInitialize();                 // Initialize CMSIS-RTOS2
-  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  app_initialize();                     // Initialize application
   osKernelStart();                      // Start thread execution
 
   for (;;) {}

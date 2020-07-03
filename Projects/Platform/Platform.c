@@ -24,12 +24,23 @@
 
 #include "cmsis_os2.h"
 
+static const osThreadAttr_t app_main_attr = {
+  .stack_size = 4096U
+};
+
 /*---------------------------------------------------------------------------
  * Application main thread
  *---------------------------------------------------------------------------*/
-__NO_RETURN void app_main (void *arg) {
+static void app_main (void *arg) {
   (void)arg;
 
   // Add user code here:
   for (;;) {}
+}
+
+/*---------------------------------------------------------------------------
+ * Application initialization
+ *---------------------------------------------------------------------------*/
+void app_initialize (void) {
+  osThreadNew(app_main, NULL, &app_main_attr);
 }
