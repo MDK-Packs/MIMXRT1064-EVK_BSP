@@ -1145,14 +1145,14 @@
         <LayUrl>https://www.keil.com</LayUrl>
         <LayKeys>Layer, CMSIS RTOS</LayKeys>
         <LayCat>RTOS</LayCat>
-        <LayLic>Apache 2.0</LayLic>
+        <LayLic> BSD 3-Clause, Apache 2.0</LayLic>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
       <Layer>
         <LayName>App</LayName>
-        <LayDesc>Platform Application Layer</LayDesc>
-        <LayKeys>Layer</LayKeys>
+        <LayDesc>Application layer (Platform)</LayDesc>
+        <LayKeys>Platform</LayKeys>
         <LayCat>Platform</LayCat>
         <LayLic>Apache 2.0</LayLic>
         <LayTarg>0</LayTarg>
@@ -1169,8 +1169,8 @@
       </Layer>
       <Layer>
         <LayName>RTOS</LayName>
-        <LayDesc>RTOS layer (RTX)</LayDesc>
-        <LayKeys>RTOS, RTX</LayKeys>
+        <LayDesc>RTOS layer</LayDesc>
+        <LayKeys>RTOS</LayKeys>
         <LayCat>RTOS</LayCat>
         <LayLic>Apache 2.0</LayLic>
         <LayTarg>0</LayTarg>

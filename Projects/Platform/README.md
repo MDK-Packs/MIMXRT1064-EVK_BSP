@@ -50,5 +50,7 @@ The Board layer contains the following configured interface drivers:
  - vioBUTTON0: USER_BUTTON (L6)
  - vioLED0:    USER_LED    (F14)
 
+**STDIO** routed to Virtual COM port (DAP-Link, baudrate = 115200)
+
 The board configuration can be modified using [MCUxpresso](https://www.keil.com/nxp)
 and is stored in the file `MIMXRT1064-EVK.mex`.
