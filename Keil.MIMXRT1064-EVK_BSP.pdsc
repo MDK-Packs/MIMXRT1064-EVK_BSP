@@ -8,24 +8,15 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
-    <release version="1.0.0-dev6">
-      Layer description changed
-      CMSIS-Driver VIO enabled in Platform project
-    </release>
-    <release version="1.0.0-dev5">
-      Examples reworked
-    </release>
-    <release version="1.0.0-dev3">
-      Abstract (Blinky) now uses into markdown
-    </release>
-    <release version="1.0.0-dev2">
-      Minor fixes.
-    </release>
-    <release version="1.0.0-dev1">
-      Examples updated.
-    </release>
-    <release version="1.0.0-dev0">
-      Initial development version.
+    <release version="1.0.0-rc0">
+      Board Support Pack for MIMXRT1064-EVK contains preconfigured CMSIS-Drivers:
+      - Ethernet MAC and PHY
+      - MCI
+      - USART
+      - VIO
+      Example projects available:
+      - CMSIS-RTOS2 Blinky (verify the basic tool setup)
+      - CMSIS-RTOS2 Platform (configure the board hardware)
     </release>
   </releases>
 
