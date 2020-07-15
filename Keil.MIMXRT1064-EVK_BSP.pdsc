@@ -8,6 +8,10 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.0.0-dev6">
+      Layer description changed
+      CMSIS-Driver VIO enabled in Platform project
+    </release>
     <release version="1.0.0-dev5">
       Examples reworked
     </release>
