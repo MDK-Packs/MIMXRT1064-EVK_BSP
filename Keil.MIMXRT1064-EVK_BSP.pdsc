@@ -20,6 +20,7 @@
     <packages>
       <package vendor="NXP" name="MIMXRT1064_DFP"     version="12.1.0-0"/>
       <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="12.1.0-0"/>
+      <package vendor="ARM" name="CMSIS"              version="5.7.0"/>
     </packages>
   </requirements>
 
