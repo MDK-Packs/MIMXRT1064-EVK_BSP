@@ -8,6 +8,12 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.1.0-dev0">
+      Pack description update (.pdsc):
+      - Update requirements to sync with MIMXRT1064_DFP, MIMXRT1064_BSP
+      - Remove board description (Already described in MIMXRT1064-EVK_BSP)
+      Update examples   
+    </release>
     <release version="1.0.0" date="2020-07-15">
       Board description and documentation for MIMXRT1064-EVK
       Example projects:
@@ -18,8 +24,8 @@
 
   <requirements>
     <packages>
-      <package vendor="NXP" name="MIMXRT1064_DFP"     version="12.1.0-0"/>
-      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="12.1.0-0"/>
+      <package vendor="NXP" name="MIMXRT1064_DFP"     version="12.2.0-0"/>
+      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="12.2.0-0"/>
       <package vendor="ARM" name="CMSIS"              version="5.7.0"/>
     </packages>
   </requirements>
@@ -60,24 +66,6 @@
       </files>
     </component>
   </components>
-
-  <boards>
-    <board vendor="NXP" name="EVK-MIMXRT1064" revision="Rev.A"
-           salesContact="https://www.nxp.com/company/contact-us:CONTACTUS"
-           orderForm   ="https://www.nxp.com/part/MIMXRT1064-EVK#/">
-      <description>MIMXRT1064-EVK: EVK Development Platform for i.MX MIMXRT1064 MCUs</description>
-      <image small="Images/MIMXRT1064EVK_small.jpg"
-             large="Images/MIMXRT1064EVK_large.jpg" public="true"/>
-
-      <book category="overview"  name="https://www.nxp.com/design/development-boards/i-mx-evaluation-and-development-boards/mimxrt1064-evk-i-mx-rt1064-evaluation-kit:MIMXRT1064-EVK" title="i.MX RT1064 Evaluation Kit"/>
-      <book category="overview"  name="Documents/IMXRTPORTFS.pdf"      title="Fact Sheet" public="true"/>
-      <book category="overview"  name="Documents/IMXRT1064QSG.pdf"     title="Quick Start Guide" public="true"/>
-      <book category="manual"    name="Documents/MIMXRT1064EVKHUG.pdf" title="Board Hardware User's Guide" public="true"/>
-      <book category="schematic" name="Documents/SPF-32221_A.pdf"      title="Schematics" public="true"/>
-
-      <mountedDevice Dname="MIMXRT1064xxxxA" Dvendor="NXP:11"/>
-    </board>
-  </boards>
 
   <examples>
     <example name="Blinky" doc="README.md" folder="Projects/Blinky">
