@@ -10,8 +10,8 @@
   <releases>
     <release version="1.1.0-dev0">
       Pack description update (.pdsc):
-      - Update requirements to sync with MIMXRT1064_DFP, MIMXRT1064_BSP
-      - Remove board description (Already described in MIMXRT1064-EVK_BSP)
+      - Update requirements to sync with MIMXRT1064_DFP, EVK-MIMXRT1064_BSP
+      - Remove board description (Already described in EVK-MIMXRT1064_BSP)
       Update examples   
     </release>
     <release version="1.0.0" date="2020-07-15">
