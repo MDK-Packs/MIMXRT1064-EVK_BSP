@@ -8,6 +8,9 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.1.0-dev2">
+      Added board EVK-MIMXRT1064_MDK 
+    </release>
     <release version="1.1.0-dev1">
       Platform project update:
       - New README.md format
@@ -73,10 +76,29 @@
     </component>
   </components>
 
+  <boards>
+    <board vendor="NXP" name="EVK-MIMXRT1064_MDK" revision="Rev.A"
+           salesContact="https://www.nxp.com/company/contact-us:CONTACTUS"
+           orderForm   ="https://www.nxp.com/part/MIMXRT1064-EVK#/">
+      <description>MIMXRT1064-EVK: EVK Development Platform for i.MX MIMXRT1064 MCUs</description>
+      <image small="Images/MIMXRT1064EVK_small.jpg"
+             large="Images/MIMXRT1064EVK_large.jpg" public="true"/>
+
+      <book category="overview"  name="https://www.nxp.com/design/development-boards/i-mx-evaluation-and-development-boards/mimxrt1064-evk-i-mx-rt1064-evaluation-kit:MIMXRT1064-EVK" title="i.MX RT1064 Evaluation Kit"/>
+      <book category="overview"  name="Documents/IMXRTPORTFS.pdf"      title="Fact Sheet" public="true"/>
+      <book category="overview"  name="Documents/IMXRT1064QSG.pdf"     title="Quick Start Guide" public="true"/>
+      <book category="manual"    name="Documents/MIMXRT1064EVKHUG.pdf" title="Board Hardware User's Guide" public="true"/>
+      <book category="schematic" name="Documents/SPF-32221_A.pdf"      title="Schematics" public="true"/>
+
+      <mountedDevice Dname="MIMXRT1064xxxxA" Dvendor="NXP:11"/>
+      <debugProbe connector="Micro-USB" debugClock="10000000" debugLink="swd" name="DAP-Link" />
+    </board>
+  </boards>
+
   <examples>
     <example name="Blinky" doc="README.md" folder="Projects/Blinky">
       <description>CMSIS-RTOS2 Blinky example with VIO</description>
-      <board name="EVK-MIMXRT1064" vendor="NXP"/>
+      <board name="EVK-MIMXRT1064_MDK" vendor="NXP"/>
       <project>
         <environment name="uv" load="Blinky.uvprojx"/>
       </project>
@@ -91,7 +113,7 @@
 
     <example name="Platform" doc="README.md" folder="Projects/Platform">
       <description>CMSIS-RTOS2 Platform example with VIO</description>
-      <board name="EVK-MIMXRT1064" vendor="NXP"/>
+      <board name="EVK-MIMXRT1064_MDK" vendor="NXP"/>
       <project>
         <environment name="uv" load="Platform.uvprojx"/>
       </project>
