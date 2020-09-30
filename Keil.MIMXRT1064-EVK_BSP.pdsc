@@ -8,20 +8,13 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
-    <release version="1.1.0-dev2">
-      Added board EVK-MIMXRT1064_MDK 
-    </release>
-    <release version="1.1.0-dev1">
+    <release version="1.1.0" date="2020-09-30">
+      Synchronized with NXP:MIMXRT1064_DFP 12.2.0 and NXP:EVK-MIMXRT1064_BSP 12.2.0
+      Renamed board to EVK-MIMXRT1064_MDK
       Platform project update:
       - New README.md format
       - NVIC configuration added
       - Fixed RAM section size used by Event Recorder
-    </release>
-    <release version="1.1.0-dev0">
-      Pack description update (.pdsc):
-      - Update requirements to sync with MIMXRT1064_DFP, EVK-MIMXRT1064_BSP
-      - Remove board description (Already described in EVK-MIMXRT1064_BSP)
-      Update examples   
     </release>
     <release version="1.0.0" date="2020-07-15">
       Board description and documentation for MIMXRT1064-EVK
