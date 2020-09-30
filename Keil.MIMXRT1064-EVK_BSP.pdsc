@@ -8,6 +8,12 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.1.0-dev1">
+      Platform project update:
+      - New README.md format
+      - NVIC configuration added
+      - Fixed RAM section size used by Event Recorder
+    </release>
     <release version="1.1.0-dev0">
       Pack description update (.pdsc):
       - Update requirements to sync with MIMXRT1064_DFP, EVK-MIMXRT1064_BSP
