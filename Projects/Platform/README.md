@@ -4,18 +4,29 @@ Platform project
 The **Platform** project configures the hardware of the evaluation board
 and is a CMSIS-RTOS2 based software template that can be further expanded.
 
-RTX5 Real-Time Operating System
--------------------------------
-The [RTX5 RTOS](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtx5_impl.html)
-implements the resource management. It is configured with the following settings:
+RTOS: Keil RTX5 Real-Time Operating System
+------------------------------------------
 
-- Global Dynamic Memory size: 24000 bytes
-- Default Thread Stack size:  3072 bytes
+The real-time operating system [Keil RTX5](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtx5_impl.html) implements the resource management. 
 
-NXP MIMXRT1064-EVK Target Board
--------------------------------
-- The board layer for NXP MIMXRT1064-EVK is using the software component `::Board Support: SDK Project Template: project_template (Variant: evkmimxrt1064)` from `NXP.EVK-MIMXRT1064_BSP.12.2.0` pack
-- It is adapted using [*MCUXPresso Config Tools*](https://www.nxp.com/design/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-config-tools-pins-clocks-peripherals:MCUXpresso-Config-Tools)
+It is configured with the following settings:
+
+- [Global Dynamic Memory size](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#systemConfig): 24000 bytes
+- [Default Thread Stack size](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#threadConfig): 3072 bytes
+- [Event Recorder Configuration](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#evtrecConfig)
+  - [Global Initialization](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html#evtrecConfigGlobIni): 1
+    - Start Recording: 1
+
+Refer to [Configure RTX v5](https://arm-software.github.io/CMSIS_5/RTOS2/html/config_rtx5.html) for a detailed description of all configuration options.
+
+Board: NXP MIMXRT1064-EVK
+-------------------------
+
+The tables below list the device configuration for this board. The board layer for the NXP MIMXRT1064-EVK is using the software component `::Board Support: SDK Project Template: project_template (Variant: evkmimxrt1064)` from `NXP.EVK-MIMXRT1064_BSP.12.3.0` pack.
+
+The heap/stack setup and the CMSIS-Driver assignment is in configuration files of related software components.
+
+The example project can be re-configured to work on custom hardware. Refer to ["Configuring Example Projects with MCUXpresso Config Tools"](https://github.com/MDK-Packs/Documentation/tree/master/Using_MCUXpresso) for information.
 
 ### System Configuration
 
