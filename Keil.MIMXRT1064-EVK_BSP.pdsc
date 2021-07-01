@@ -7,6 +7,10 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.3.0-dev1">
+      Projects examples update:
+      - config files to CMSIS 5.8.0
+    </release>
     <release version="1.3.0-dev0">
       Platform project update (synchronize with CB_Lab4Layer):
       - add missing interface IDs (STDOUT, STDIN, STDERR, Heap)
