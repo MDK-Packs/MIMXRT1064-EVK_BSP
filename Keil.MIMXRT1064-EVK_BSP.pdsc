@@ -7,12 +7,11 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
-    <release version="1.3.0-dev1">
-      Projects examples update:
-      - config files to CMSIS 5.8.0
-    </release>
-    <release version="1.3.0-dev0">
-      Platform project update (synchronize with CB_Lab4Layer):
+    <release version="1.2.1" date="2021-07-12">
+      Blinky project:
+      - update RTX configuration (CMSIS 5.8.0)
+      Platform project (synchronize with CB_Lab4Layer):
+      - update RTX configuration (CMSIS 5.8.0)
       - add missing interface IDs (STDOUT, STDIN, STDERR, Heap)
       - update Board layer description
       - use packs with fixed version (reproducible build)
