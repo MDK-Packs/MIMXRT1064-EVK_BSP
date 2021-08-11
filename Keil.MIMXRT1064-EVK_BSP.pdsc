@@ -7,6 +7,9 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
+    <release version="1.2.2-dev0">
+      Corrected device in board description attribute 'mountedDevice'.
+    </release>
     <release version="1.2.1" date="2021-07-12">
       Blinky project:
       - update RTX configuration (CMSIS 5.8.0)
@@ -95,7 +98,7 @@
       <book category="manual"    name="Documents/MIMXRT1064EVKHUG.pdf" title="Board Hardware User's Guide" public="true"/>
       <book category="schematic" name="Documents/SPF-32221_A.pdf"      title="Schematics" public="true"/>
 
-      <mountedDevice Dname="MIMXRT1064xxxxA" Dvendor="NXP:11"/>
+      <mountedDevice Dname="MIMXRT1064DVL6A" Dvendor="NXP:11"/>
       <debugProbe connector="Micro-USB" debugClock="10000000" debugLink="swd" name="DAP-Link" />
     </board>
   </boards>
