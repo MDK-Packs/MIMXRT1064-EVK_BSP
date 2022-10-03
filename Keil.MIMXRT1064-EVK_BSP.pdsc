@@ -7,11 +7,11 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
-    <release version="1.3.0-rc0">
+    <release version="1.3.0" date="2022-10-03">
       Synchronize with NXP:MIMXRT1064_DFP 15.0.0 and NXP:EVK-MIMXRT1064_BSP 15.0.0
       Correct device in board description attribute 'mountedDevice'
       Platform project:
-      - add support for audio
+      - add support for Audio
     </release>
     <release version="1.2.1" date="2021-07-12">
       Blinky project:
