@@ -1,8 +1,8 @@
 /******************************************************************************
  * @file     vio_MIMXRT1064-EVK.c
  * @brief    Virtual I/O implementation for board MIMXRT1064-EVK
- * @version  V1.0.0
- * @date     26. March 2020
+ * @version  V1.0.1
+ * @date     8. July 2022
  ******************************************************************************/
 /*
  * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
@@ -96,12 +96,12 @@ void vioInit (void) {
 
 #if !defined CMSIS_VOUT
   // Initialize LEDs pins
-  BOARD_InitUSER_LED();
+  BOARD_InitLEDPins();
 #endif
 
 #if !defined CMSIS_VIN
   // Initialize buttons pins
-  BOARD_InitUSER_BUTTON();
+  BOARD_InitButtonsPins();
 #endif
 }
 

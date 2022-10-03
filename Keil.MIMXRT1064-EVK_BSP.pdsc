@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd" schemaVersion="1.7.1">
+<package xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd" schemaVersion="1.7.7">
   <vendor>Keil</vendor>
   <name>MIMXRT1064-EVK_BSP</name>
   <description>NXP MIMXRT1064-EVK board support pack</description>
@@ -7,8 +7,11 @@
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
   <releases>
-    <release version="1.2.2-dev0">
-      Corrected device in board description attribute 'mountedDevice'.
+    <release version="1.3.0-rc0">
+      Synchronize with NXP:MIMXRT1064_DFP 15.0.0 and NXP:EVK-MIMXRT1064_BSP 15.0.0
+      Correct device in board description attribute 'mountedDevice'
+      Platform project:
+      - add support for audio
     </release>
     <release version="1.2.1" date="2021-07-12">
       Blinky project:
@@ -41,8 +44,8 @@
 
   <requirements>
     <packages>
-      <package vendor="NXP" name="MIMXRT1064_DFP"     version="12.3.0-0"/>
-      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="12.3.0-0"/>
+      <package vendor="NXP" name="MIMXRT1064_DFP"     version="15.0.0-0"/>
+      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="15.0.0-0"/>
       <package vendor="ARM" name="CMSIS"              version="5.7.0"/>
     </packages>
   </requirements>
@@ -72,7 +75,7 @@
 
   <components>
     <!-- VIO component for MIMXRT1064-EVK -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="1.0.0" Capiversion="0.1.0"   condition="MIMXRT1064-EVK VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="1.0.1" Capiversion="0.1.0"   condition="MIMXRT1064-EVK VIO">
       <description>Virtual I/O implementation for MIMXRT1064-EVK VIO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
@@ -102,7 +105,7 @@
       <feature type="LineOut" n="1" name="4-pole audio headphone jack"/>
       <feature type="MIC" n="1" name="Microphone"/>
       <feature type="Speaker" n="1" name="External speaker connection"/>
-      <feature type="CustomFF" n="100" m="150" name="IMXRT"/>
+      <feature type="CustomFF" n="100" m="150" name="MIMXRT1064-EVK"/>
       <feature type="LED" n="1" name="User LED"/>
       <feature type="Button" n="4" name="Push-buttons: ON/OFF, 2 x Reset, User"/>
       <feature type="Camera" n="1" name="Camera connector"/>
@@ -115,7 +118,7 @@
       <book category="overview"  name="Documents/IMXRTPORTFS.pdf"      title="Fact Sheet" public="true"/>
       <book category="overview"  name="Documents/IMXRT1064QSG.pdf"     title="Quick Start Guide" public="true"/>
       <book category="manual"    name="Documents/MIMXRT1064EVKHUG.pdf" title="Board Hardware User's Guide" public="true"/>
-      <book category="schematic" name="Documents/SPF-32221_A.pdf"      title="Schematics" public="true"/>
+      <book category="schematic" name="Documents/SPF-32221_A2.pdf"     title="Schematics" public="true"/>
       <book category="other"     name="Documents/README.md"            title="Guide" public="true"/>
       <debugProbe connector="Micro-USB" debugClock="10000000" debugLink="swd" name="DAP-Link" />
     </board>
