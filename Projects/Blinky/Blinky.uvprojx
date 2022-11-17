@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>MIMXRT1064DVL6A</Device>
           <Vendor>NXP</Vendor>
-          <PackID>NXP.MIMXRT1064_DFP.15.0.0</PackID>
+          <PackID>NXP.MIMXRT1064_DFP.15.1.0</PackID>
           <PackURL>https://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
           <Cpu>IRAM(0x20000000,0x020000) IRAM2(0x00000000,0x020000) IROM(0x70000000,0x400000) XRAM(0x20200000,0x0c0000) CPUTYPE("Cortex-M7") FPU3(DFPU) CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -805,7 +805,7 @@
       <file attr="config" category="sourceC" name="project_template\board.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\board.c</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -813,7 +813,7 @@
       <file attr="config" category="header" name="project_template\board.h" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\board.h</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -821,7 +821,7 @@
       <file attr="config" category="sourceC" name="project_template\clock_config.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\clock_config.c</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -829,7 +829,7 @@
       <file attr="config" category="header" name="project_template\clock_config.h" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -837,7 +837,7 @@
       <file attr="config" category="sourceC" name="project_template\dcd.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\dcd.c</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -845,7 +845,7 @@
       <file attr="config" category="header" name="project_template\dcd.h" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\dcd.h</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -853,7 +853,7 @@
       <file attr="config" category="sourceC" name="project_template\peripherals.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\peripherals.c</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -861,7 +861,7 @@
       <file attr="config" category="header" name="project_template\peripherals.h" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\peripherals.h</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -869,7 +869,7 @@
       <file attr="config" category="sourceC" name="project_template\pin_mux.c" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.c</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -877,7 +877,7 @@
       <file attr="config" category="header" name="project_template\pin_mux.h" version="1.0.0">
         <instance index="0">RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h</instance>
         <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="evkmimxrt1064" Cvendor="NXP" Cversion="1.0.0" condition="device.MIMXRT1064_AND___component.serial_manager_AND_utility.assert_AND_utility.debug_console__OR__utility.assert_lite_AND_utility.debug_console_lite___AND_component.lpuart_adapter_AND_device.MIMXRT1064_startup_AND_driver.clock_AND_driver.common_AND_driver.igpio_AND_driver.iomuxc_AND_driver.lpuart_AND_driver.nic301_AND_driver.xip_board.evkmimxrt1064_AND_driver.xip_device"/>
-        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="EVK-MIMXRT1064_BSP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -909,7 +909,7 @@
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_flexspi_nor.scf" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -917,7 +917,7 @@
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_flexspi_nor_sdram.scf" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor_sdram.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -925,7 +925,7 @@
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_ram.scf" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_ram.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -933,7 +933,7 @@
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_sdram.scf" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -941,7 +941,7 @@
       <file attr="config" category="linkerScript" condition="mdk" name="arm\MIMXRT1064xxxxx_sdram_txt.scf" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram_txt.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
@@ -949,7 +949,7 @@
       <file attr="config" category="sourceAsm" condition="mdk" name="arm\startup_MIMXRT1064.S" version="1.1.0">
         <instance index="0">RTE\Device\MIMXRT1064DVL6A\startup_MIMXRT1064.S</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.MIMXRT1064_AND__armclang_OR_iar__AND_device.MIMXRT1064_system"/>
-        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.0.0"/>
+        <package name="MIMXRT1064_DFP" schemaVersion="1.4" url="https://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="15.1.0"/>
         <targetInfos>
           <targetInfo name="MIMXRT1064-EVK"/>
         </targetInfos>
