@@ -12,6 +12,8 @@
       Drivers:
       - CMSIS-Driver VIO:
       -- Correct variables initialization to avoid compiler warnings
+      Example projects:
+      - Add BOARD_InitBootPeripherals() function call to main.c module
     </release>
     <release version="1.3.0" date="2022-10-03">
       Synchronize with NXP:MIMXRT1064_DFP 15.0.0 and NXP:EVK-MIMXRT1064_BSP 15.0.0
