@@ -3,6 +3,7 @@
   <vendor>Keil</vendor>
   <name>MIMXRT1064-EVK_BSP</name>
   <description>NXP MIMXRT1064-EVK board support pack</description>
+  <license>LICENSE</license>
   <url>https://github.com/MDK-Packs/Pack/raw/master/MIMXRT1064-EVK_BSP/</url>
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
 
