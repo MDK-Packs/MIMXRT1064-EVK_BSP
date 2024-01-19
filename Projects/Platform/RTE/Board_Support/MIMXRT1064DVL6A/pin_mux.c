@@ -6,11 +6,11 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v12.0
+product: Pins v14.0
 processor: MIMXRT1064xxxxA
 package_id: MIMXRT1064DVL6A
 mcu_data: ksdk2_0
-processor_version: 12.0.1
+processor_version: 14.0.0
 board: MIMXRT1064-EVK
 pin_labels:
 - {pin_num: F14, pin_signal: GPIO_AD_B0_09, label: 'JTAG_TDI/J21[5]/ENET_RST/J22[5]', identifier: USER_LED;ENET_RST}
