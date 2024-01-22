@@ -8,6 +8,11 @@
   <license>LICENSE</license>
 
   <releases>
+    <release version="1.5.0-dev0">
+      Drivers:
+      - CMSIS-Driver VIO:
+      -- Update VIO to API 1.0.0
+    </release>
     <release version="1.4.0-rc0">
       Synchronize with NXP:MIMXRT1064_DFP 17.0.0 and NXP:EVK-MIMXRT1064_BSP 17.0.0
     </release>
@@ -92,7 +97,7 @@
 
   <components>
     <!-- VIO component for MIMXRT1064-EVK -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="1.0.2" Capiversion="0.1.0"   condition="MIMXRT1064-EVK VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="2.0.0" Capiversion="1.0.0"   condition="MIMXRT1064-EVK VIO">
       <description>Virtual I/O implementation for MIMXRT1064-EVK VIO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
