@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package schemaVersion="1.7.28" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.28/schema/PACK.xsd">
+<package schemaVersion="1.7.36" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.36/schema/PACK.xsd">
   <vendor>Keil</vendor>
   <name>MIMXRT1064-EVK_BSP</name>
   <description>NXP MIMXRT1064-EVK board support pack</description>
   <url>https://github.com/MDK-Packs/Pack/raw/master/MIMXRT1064-EVK_BSP/</url>
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
   <license>LICENSE</license>
+  <licenseSets>
+    <licenseSet id="all" default="true" gating="true">
+      <license name="LICENSE" title="Apache 2.0 open-source license" spdx="Apache-2.0"/>
+    </licenseSet>
+  </licenseSets>
 
   <releases>
     <release version="1.3.2-dev0">
