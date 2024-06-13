@@ -13,6 +13,9 @@
   </licenseSets>
 
   <releases>
+    <release version="1.4.0-rc0">
+      Synchronize with NXP:MIMXRT1064_DFP 17.0.0 and NXP:EVK-MIMXRT1064_BSP 17.0.0
+    </release>
     <release version="1.3.2-dev0">
       Pack Description:
       - Add LICENSE file
@@ -63,8 +66,8 @@
 
   <requirements>
     <packages>
-      <package vendor="NXP" name="MIMXRT1064_DFP"     version="15.1.0-0"/>
-      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="15.1.0-0"/>
+      <package vendor="NXP" name="MIMXRT1064_DFP"     version="17.0.0-0"/>
+      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="17.0.0-0"/>
       <package vendor="ARM" name="CMSIS"              version="5.7.0"/>
     </packages>
   </requirements>
