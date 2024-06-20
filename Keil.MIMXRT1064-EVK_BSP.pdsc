@@ -13,6 +13,21 @@
   </licenseSets>
 
   <releases>
+    <release version="1.5.0-dev0">
+      Drivers:
+      - CMSIS-Driver VIO:
+      -- Update VIO to API 1.0.0
+      Example projects:
+      - Update projects to CMSIS 6
+      - Migrate Event Recorder component (from Compiler to CMSIS-View pack)
+      - Add cmsis_core5.h legacy header file
+      - Platform:
+      -- Migrate STDIO components (from Compiler to CMSIS-Compiler pack)
+      -- Update README.md
+    </release>
+    <release version="1.4.0-rc0">
+      Synchronize with NXP:MIMXRT1064_DFP 17.0.0 and NXP:EVK-MIMXRT1064_BSP 17.0.0
+    </release>
     <release version="1.3.2-dev0">
       Pack Description:
       - Add LICENSE file
@@ -63,8 +78,8 @@
 
   <requirements>
     <packages>
-      <package vendor="NXP" name="MIMXRT1064_DFP"     version="15.1.0-0"/>
-      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="15.1.0-0"/>
+      <package vendor="NXP" name="MIMXRT1064_DFP"     version="17.0.0-0"/>
+      <package vendor="NXP" name="EVK-MIMXRT1064_BSP" version="17.0.0-0"/>
       <package vendor="ARM" name="CMSIS"              version="5.7.0"/>
     </packages>
   </requirements>
@@ -94,7 +109,7 @@
 
   <components>
     <!-- VIO component for MIMXRT1064-EVK -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="1.0.2" Capiversion="0.1.0"   condition="MIMXRT1064-EVK VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="MIMXRT1064-EVK" Cversion="2.0.0" Capiversion="1.0.0"   condition="MIMXRT1064-EVK VIO">
       <description>Virtual I/O implementation for MIMXRT1064-EVK VIO</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD

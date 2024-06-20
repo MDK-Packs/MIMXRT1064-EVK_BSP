@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
-<configuration name="MIMXRT1064-EVK" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_12 http://mcuxpresso.nxp.com/XSD/mex_configuration_12.xsd" uuid="d75e55f6-68ab-46ef-814b-b94593af7f06" version="12" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_12" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<configuration name="MIMXRT1064-EVK" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_14 http://mcuxpresso.nxp.com/XSD/mex_configuration_14.xsd" uuid="d75e55f6-68ab-46ef-814b-b94593af7f06" version="14" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_14" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <common>
       <processor>MIMXRT1064xxxxA</processor>
       <package>MIMXRT1064DVL6A</package>
@@ -19,13 +19,13 @@
       <generate_registers_defines>false</generate_registers_defines>
    </preferences>
    <tools>
-      <pins name="Pins" version="12.0" enabled="true" update_project_code="true">
+      <pins name="Pins" version="14.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/pin_mux.c" update_enabled="true"/>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/pin_mux.h" update_enabled="true"/>
          </generated_project_files>
          <pins_profile>
-            <processor_version>12.0.1</processor_version>
+            <processor_version>14.0.0</processor_version>
             <pin_labels>
                <pin_label pin_num="F14" pin_signal="GPIO_AD_B0_09" label="JTAG_TDI/J21[5]/ENET_RST/J22[5]" identifier="USER_LED;ENET_RST"/>
                <pin_label pin_num="G13" pin_signal="GPIO_AD_B0_10" label="JTAG_TDO/J21[13]/INT1_COMBO/ENET_INT/J22[6]/U32[11]" identifier="INT1_COMBO;ENET_INT"/>
@@ -773,13 +773,13 @@
             </function>
          </functions_list>
       </pins>
-      <clocks name="Clocks" version="10.0" enabled="true" update_project_code="true">
+      <clocks name="Clocks" version="12.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/clock_config.c" update_enabled="true"/>
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/clock_config.h" update_enabled="true"/>
          </generated_project_files>
          <clocks_profile>
-            <processor_version>12.0.1</processor_version>
+            <processor_version>14.0.0</processor_version>
          </clocks_profile>
          <clock_configurations>
             <clock_configuration name="BOARD_BootClockRUN" id_prefix="" prefix_user_defined="false">
@@ -945,7 +945,7 @@
             <file path="RTE/Board_Support/MIMXRT1064DVL6A/dcd.h" update_enabled="true"/>
          </generated_project_files>
          <dcdx_profile>
-            <processor_version>12.0.1</processor_version>
+            <processor_version>14.0.0</processor_version>
             <output_format>c_array</output_format>
          </dcdx_profile>
          <dcdx_configurations>
