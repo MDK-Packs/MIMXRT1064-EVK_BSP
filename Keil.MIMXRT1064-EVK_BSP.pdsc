@@ -5,14 +5,21 @@
   <description>NXP MIMXRT1064-EVK board support pack</description>
   <url>https://github.com/MDK-Packs/Pack/raw/master/MIMXRT1064-EVK_BSP/</url>
   <repository type="git">https://github.com/MDK-Packs/MIMXRT1064-EVK_BSP.git</repository>
-  <license>LICENSE</license>
+  <license>LICENSES</license>
   <licenseSets>
     <licenseSet id="all" default="true" gating="true">
-      <license name="LICENSE" title="Apache 2.0 open-source license" spdx="Apache-2.0"/>
+      <license title="Apache-2.0 License for CMSIS add-ons" name="LICENSE-Apache-2.0"   spdx="Apache-2.0"/>
+      <license title="BSD-3-Clause License for NXP SDK"     name="LICENSE-BSD-3-Clause" spdx="BSD-3-Clause"/>
     </licenseSet>
   </licenseSets>
 
   <releases>
+    <release version="1.3.2-dev1">
+      Reorganize Licenses:
+      - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
+      - LICENSE-Apache-2.0 (for CMSIS add-ons)
+      - LICENSE-BSD-3-Clause (for NXP SDK)
+    </release>
     <release version="1.3.2-dev0">
       Pack Description:
       - Add LICENSE file
