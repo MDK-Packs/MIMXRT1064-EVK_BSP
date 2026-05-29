@@ -14,16 +14,13 @@
   </licenseSets>
 
   <releases>
-    <release version="1.3.2-dev2">
+    <release version="1.3.2-rc0">
+    <!-- <release version="1.3.2" date="xxxx-xx-xx" deprecated="xxxx-xx-xx"> -->
       This Software Pack is no longer maintained
-    </release>
-    <release version="1.3.2-dev1">
       Reorganize Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
       - LICENSE-Apache-2.0 (for CMSIS add-ons)
       - LICENSE-BSD-3-Clause (for NXP SDK)
-    </release>
-    <release version="1.3.2-dev0">
       Pack Description:
       - Add LICENSE file
       - Update schemaVersion (1.7.28)
