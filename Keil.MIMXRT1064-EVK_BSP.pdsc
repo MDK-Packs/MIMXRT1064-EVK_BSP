@@ -14,6 +14,9 @@
   </licenseSets>
 
   <releases>
+    <release version="1.3.2-dev2">
+      This Software Pack is no longer maintained
+    </release>
     <release version="1.3.2-dev1">
       Reorganize Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
