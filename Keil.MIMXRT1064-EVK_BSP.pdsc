@@ -14,8 +14,7 @@
   </licenseSets>
 
   <releases>
-    <release version="1.3.2-rc0">
-    <!-- <release version="1.3.2" date="xxxx-xx-xx" deprecated="xxxx-xx-xx"> -->
+    <release version="1.3.2" date="2026-06-04" deprecated="2026-06-04">
       This Software Pack is no longer maintained
       Reorganize Licenses:
       - LICENSES (combined license file: Apache-2.0 and BSD-3-Clause)
